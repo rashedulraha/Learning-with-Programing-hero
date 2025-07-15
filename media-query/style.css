@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #212121;
+  padding: 0 10px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.actual-card-content {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.actual-card-content img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 6px 16px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  background: linear-gradient(45deg, rgb(85, 132, 234), rgb(41, 99, 225));
+  color: white;
+  margin-bottom: 15px;
+}
+
+.actual-data {
+  padding: 10px;
+}
+
+.img-content h1 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.img-content p {
+  color: rgb(175, 171, 171);
+}
+
+/*  !provfile data  */
+
+.img-picture {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.img-picture img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* background-color: rebeccapurple; */
+  padding: none;
+  margin-top: 20px;
+}
+
+/*  smolar device responsive */
+
+@media screen and (max-width: 576px) {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/*  medial device responsive */
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
