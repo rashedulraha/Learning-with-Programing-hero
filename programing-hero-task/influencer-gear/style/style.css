@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --web-body: #ffff;
+  --primary: #3a3a3a;
+  --btn-bg: #e02c6d;
+  --secondary: #1d181f;
+}
+
+body {
+  background-color: var(--web-body);
+  height: 100vh;
+  width: 100%;
+}
+
+/*  shard style */
+
+.display-flex {
+  display: flex;
+}
+
+/*  header style */
+header {
+  /* max-width: 8.25rem 7.5rem; */
+}
+
+/* ? nav bar style */
+
+nav {
+  /* max-width: 8.25rem 7.5rem; */
+  max-width: 1366px;
+  margin: 5.438rem auto 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-bar-icon {
+  display: none;
+}
+nav h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+nav ul {
+  gap: 2.125rem;
+}
+
+nav ul li a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+/*  ! responsive design  */
+@media screen and (max-width: 576px) {
+  nav {
+    margin: 2.188rem 1rem 0 1rem;
+  }
+
+  nav h3 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .nav-bar-icon {
+    display: block;
+  }
+
+  .fa-magnifying-glass {
+    display: none;
+  }
+
+  .main-navbar {
+    display: none;
+  }
+}
