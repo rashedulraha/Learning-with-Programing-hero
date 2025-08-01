@@ -30,10 +30,11 @@ html {
   background-color: white;
   width: 90%;
   max-width: 450px;
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 1rem;
   display: grid;
   gap: 1;
+  height: auto;
 }
 
 .container h1 {
@@ -42,6 +43,23 @@ html {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-align: center;
   margin-bottom: 0.5rem;
+}
+.bmi-succeed {
+  color: green;
+  background-color: rgb(189, 233, 189);
+  padding: 0.5rem;
+  border-left: 0.5rem solid green;
+  border-radius: 0.6rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+.bmi-danger {
+  color: red;
+  background-color: rgb(233, 196, 196);
+  padding: 0.5rem;
+  border-left: 0.5rem solid red;
+  border-radius: 0.6rem;
+  margin-top: 1rem;
 }
 
 .hr {
@@ -83,6 +101,7 @@ html {
 .btn-container {
   display: flex;
   gap: 1.5rem;
+  margin-bottom: 0.7rem;
 }
 button {
   width: 50%;
@@ -109,7 +128,7 @@ button {
 
 .output {
   text-align: center;
-  margin-top: 1rem;
+  margin: 1rem 0 1rem 0;
 }
 .output #bmi {
   font-size: 5rem;
@@ -121,6 +140,9 @@ button {
 
 #bmi-scale {
   display: flex;
+}
+#bmi {
+  margin-top: 1rem;
 }
 
 #bmi-scale div {

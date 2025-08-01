@@ -20,22 +20,33 @@
       <form id="form">
         <div class="first-child">
           <label for="weight">Weight (KG)</label>
-          <input type="number" value="5" />
+          <input
+            type="number"
+            id="weight"
+            value="58"
+            placeholder="Enter your Weight (KG)"
+          />
         </div>
         <div class="second-child">
           <label for="height">Height (CM)</label>
-          <input type="number" value="0" />
+          <input
+            type="number"
+            id="height"
+            value="176"
+            placeholder="Enter your Height (CM)"
+          />
         </div>
         <div class="btn-container">
-          <button class="btn-1">reset</button>
-          <button class="btn2">Calculate</button>
+          <button class="btn1" id="reset" type="button">reset</button>
+
+          <button class="btn2" id="calculate" type="button">Calculate</button>
         </div>
       </form>
 
       <!--!  section output -->
 
       <section class="output">
-        <h3>Your BMI is</h3>
+        <h3><span id="bmi-value">Your BMI Is</span></h3>
         <p id="bmi">0</p>
         <p id="desc">N/A</p>
       </section>
@@ -51,12 +62,12 @@
           <p>18.5 - 25</p>
         </div>
 
-        <div>
+        <div style="--color: var(--overWeight)">
           <h4>Over weight</h4>
           <p>25-30</p>
         </div>
 
-        <div>
+        <div style="--color: var(--obese)">
           <h4>Obese</h4>
           <p>>=30</p>
         </div>
@@ -64,6 +75,6 @@
     </div>
 
     <!--  script add  -->
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
