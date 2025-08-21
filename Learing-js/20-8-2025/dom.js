@@ -66,3 +66,40 @@
 // });
 
 // container.appendChild(createElement);
+
+// const myBtn = document.querySelector("#myBtn");
+
+// let count = 0;
+
+// myBtn.addEventListener("click", function () {
+//   if (count === 0) {
+//     document.body.style.backgroundColor = "red";
+//     count = 1;
+//   } else {
+//     document.body.style.backgroundColor = "white";
+//     count = 0;
+//   }
+// });
+
+// Select elements
+const container = document.getElementById("container");
+const text = document.querySelector(".text");
+const btn = document.getElementById("btn");
+
+// Modify content
+text.textContent = "Updated Content!";
+
+// Add styles
+text.style.color = "blue";
+text.classList.add("highlight");
+
+// Create and insert new element
+const newParagraph = document.createElement("p");
+newParagraph.textContent = "Dynamically added!";
+container.appendChild(newParagraph);
+
+// Event handling
+btn.addEventListener("click", () => {
+  alert("Button clicked!");
+  btn.style.backgroundColor = "green";
+});
