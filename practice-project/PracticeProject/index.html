@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Apps</title>
+    <!--  custom css link  -->
+    <link rel="stylesheet" href="./style.css" />
+    <!--?  tailwind css cdn link  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!--?  daisy ul cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body
+    class="bg-[#f4f5f7] h-[100vh] flex flex-col items-center justify-center"
+  >
+    <!-- img and bg img -->
+    <div
+      class="w-[330px] h-[135px] bg-[url(./assets/bg.png)] bg-cover bg-no-repeat flex items-center justify-center"
+    >
+      <figure>
+        <img src="./assets/Group.png" alt="group main img" />
+      </figure>
+    </div>
+    <!--  main from -->
+    <form
+      class="bg-white rounded-2xl p-8 w-[402px] h-[317px] flex gap-4 flex-col"
+    >
+      <div class="w-full">
+        <label for="mobile banking" class="text-sm font-medium text-black">
+          Mobile Number
+        </label>
+        <input
+          id="mobile-number"
+          type="number"
+          placeholder="Enter your phone number"
+          class="border-0 py-2 px-3 rounded-full w-full mt-2 w-ful outline-none bg-[#f4f5f7]"
+          required
+        />
+      </div>
+
+      <div class="w-full">
+        <label for="mobile banking" class="text-sm font-medium text-black">
+          4 Digit Pin
+        </label>
+        <input
+          id="pin-number"
+          type="password"
+          placeholder="Enter your 4 digit pin"
+          class="border-0 py-2 px-3 rounded-full w-full mt-2 w-ful outline-none bg-[#f4f5f7]"
+          required
+        />
+      </div>
+      <button
+        id="login-btn"
+        class="btn-primary w-full rounded-3xl p-2 bg-[#0874F2] text-white mt-3"
+      >
+        Log in
+      </button>
+    </form>
+
+    <!--  adding js file  -->
+    <script src="./script/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+    <!--  link cnd font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--  custom css link  -->
+    <link rel="stylesheet" href="./style.css" />
+    <!--?  tailwind css cdn link  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!--?  daisy ul cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body
+    class="bg-[#f4f5f7] w-[100vw] h-[100vh] flex flex-col items-center justify-start"
+  >
+    <!--  main hero section  -->
+
+    <main class="mt-[100px] p-4 bg-white rounded-lg w-[500px]">
+      <!-- main  app header section and nab var -->
+      <nav class="w-full flex items-center justify-between mt-4">
+        <div class="flex gap-3 items-center">
+          <figure>
+            <img class="w-14" src="./assets/Group.png" alt="" />
+          </figure>
+          <!-- nav content -->
+          <div>
+            <h1 class="font-extrabold text-sm">$45000</h1>
+            <p class="text-gray-400 font-normal text-[14px]">
+              Available Balance
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <button
+            id="log-out logout-btn"
+            class="py-2 px-3 border-1 border-gray-300 rounded-md capitalize text-gray-400 cursor-pointer"
+          >
+            log out
+            <i
+              class="fa-solid fa-arrow-right-from-bracket ml-2- text-gray-600"
+            ></i>
+          </button>
+        </div>
+      </nav>
+
+      <!--  hero section and  actual information and btn -->
+
+      <div class="welcome-page mt-8">
+        <h2 class="text-[24px] font-bold text-black capitalize">
+          <i class="fa-solid fa-fire text-orange-600"></i>welcome to payooo!
+        </h2>
+        <p class="text-[16px] font-normal mt-3 text-gray-400 leading-6">
+          Enjoy easy and convenient financial services with us. <br />
+          Cashout charge is low and
+        </p>
+      </div>
+
+      <!--  actual  functionality button -->
+      <div class="grid grid-cols-3 gap-4 mt-6">
+        <button
+          class="px-3 py-5 border-1 border-gray-300 rounded-lg flex items-center justify-center flex-col capitalize gap-2 font-normal active:font-bold"
+        >
+          <figure class="w-[24px] h-[24px]">
+            <img src="./assets/purse1.png" alt="" />
+          </figure>
+          add money
+        </button>
+        <button
+          class="px-3 py-5 border-1 border-gray-300 rounded-lg flex items-center justify-center flex-col capitalize gap-2 font-normal active:font-bold"
+        >
+          <figure class="w-[24px] h-[24px]">
+            <img src="./assets/send1.png" alt="" />
+          </figure>
+          Cashout
+        </button>
+        <button
+          class="px-3 py-5 border-1 text-[#212121] border-gray-300 rounded-lg flex items-center justify-center flex-col capitalize gap-2 font-normal active:font-bold"
+        >
+          <figure class="w-[24px] h-[24px]">
+            <img src="./assets/send1.png" alt="" />
+          </figure>
+          Transfer Money
+        </button>
+        <button
+          class="px-3 py-5 border-1 border-gray-300 rounded-lg flex items-center justify-center flex-col capitalize gap-2 font-normal active:font-bold"
+        >
+          <figure class="w-[24px] h-[24px]">
+            <img src="./assets/bonus1.png" alt="" />
+          </figure>
+          Get Bonus
+        </button>
+        <button
+          class="px-3 py-5 border-1 border-gray-300 rounded-lg flex items-center justify-center flex-col capitalize gap-2 font-normal active:font-bold"
+        >
+          <figure class="w-[24px] h-[24px]">
+            <img src="./assets/wallet1.png" alt="" />
+          </figure>
+          Pay Bill
+        </button>
+        <button
+          class="px-3 py-5 border-1 text-[#212121] border-gray-300 rounded-lg flex items-center justify-center flex-col capitalize gap-2 font-normal active:font-bold"
+        >
+          <figure class="w-[24px] h-[24px]">
+            <img src="./assets/transaction1.png" alt="" />
+          </figure>
+          Transactions
+        </button>
+      </div>
+    </main>
+
+    <!--  script adding and js file actual content  -->
+    <!-- <script src="./script/app.js"></script> -->
+
+    <script src="js.js"></script>
+    <!-- script -->
+  </body>
+</html>
