@@ -14,9 +14,7 @@ submit.addEventListener("click", (event) => {
     commentInput.value.trim() === "" ||
     commentInput.value.trim().length <= 10
   ) {
-    alert(
-      "Please enter your valid comment anything and comment text length minimum 10  character"
-    );
+    alert("Please enter your any text and text length minimum 10 character");
     return;
   }
   // const textValue = commentInput.value;
