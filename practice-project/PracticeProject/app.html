@@ -125,7 +125,10 @@
       </div>
 
       <!-- form  add money section  -->
-      <div id="add-money-section" class="all-from-section mt-4 mb-[200px]">
+      <div
+        id="add-money-section"
+        class="all-from-section mt-4 mb-[200px] main-from-section"
+      >
         <div class="p-5">
           <h2 class="font-bold text-sm mb-4">Add money</h2>
         </div>
@@ -208,7 +211,10 @@
       </div>
 
       <!-- from cashOut section  -->
-      <div id="cashOut-section" class="all-from-section mt-4 mb-[200px] hidden">
+      <div
+        id="cashOut-section"
+        class="all-from-section mt-4 mb-[200px] main-from-section"
+      >
         <div class="p-5">
           <h2 class="font-bold text-sm mb-4 capitalize">cashOut</h2>
         </div>
@@ -219,7 +225,7 @@
           <!-- agent number adding section -->
           <div class="w-full">
             <label
-              for="agen-number"
+              for="agent-number"
               class="capitalize text-gray-600 font-semibold text-sm"
               >agent number</label
             >
@@ -254,7 +260,7 @@
             >
             <input
               type="password"
-              id="pin-number"
+              id="account-pin-number"
               placeholder="Enter your 4 digit pin number"
               maxlength="4"
               class="w-full bg-[#f4f5f7] rounded-full px-3 py-2 mt-3 text-gray-500 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
@@ -272,7 +278,10 @@
 
       <!-- Transfer money -->
 
-      <div id="transfer" class="all-from-section mt-4 mb-[200px] hidden">
+      <div
+        id="Transfer-money"
+        class="all-from-section mt-4 mb-[200px] main-from-section"
+      >
         <div class="p-5">
           <h2 class="font-bold text-sm mb-4 capitalize">Transfer money</h2>
         </div>
@@ -285,26 +294,27 @@
             <label
               for="agen-number"
               class="capitalize text-gray-600 font-semibold text-sm"
-              >agent number</label
+            >
+              user account number</label
             >
             <input
               type="number"
-              id="agent-number"
-              placeholder="Enter 11 digit agent number"
+              id="user-number"
+              placeholder="Enter 11 digit number"
               class="w-full bg-[#f4f5f7] rounded-full px-3 py-2 mt-3 text-gray-500 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
             />
           </div>
           <!-- with draw section-->
-          <div class="w-full">
+          <div class="w-full main-from-section">
             <label
-              for="with-draw-amount"
+              for="amount"
               class="capitalize text-gray-600 font-semibold text-sm"
               >amount</label
             >
             <input
               type="number"
-              id="with-draw-amount"
-              placeholder="Enter amount to withdraw"
+              id="amount-to-transfer"
+              placeholder="Enter amount to Transfer"
               class="w-full bg-[#f4f5f7] rounded-full px-3 py-2 mt-3 text-gray-500 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
             />
           </div>
@@ -312,13 +322,13 @@
           <!-- pin -->
           <div class="w-full">
             <label
-              for="pin-number"
+              for="account-pin-number"
               class="capitalize text-gray-600 font-semibold text-sm"
               >Pin number</label
             >
             <input
               type="password"
-              id="pin-number"
+              id="account-pin-number"
               placeholder="Enter your 4 digit pin number"
               maxlength="4"
               class="w-full bg-[#f4f5f7] rounded-full px-3 py-2 mt-3 text-gray-500 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
@@ -326,10 +336,10 @@
           </div>
 
           <button
-            id="cash-Out"
+            id="transfer-money-btn"
             class="w-full rounded-3xl p-2 bg-[#0874F2] text-white mt-3 cursor-pointer"
           >
-            Cash Out
+            Transfer Money
           </button>
         </form>
       </div>
@@ -337,7 +347,7 @@
       <!-- Get bonus -->
       <div
         id="get-bonus-section"
-        class="all-from-section mt-4 mb-[200px] hidden"
+        class="all-from-section mt-4 mb-[200px] main-from-section"
       >
         <div class="p-5">
           <h2 class="font-bold text-sm mb-4 capitalize">Transfer money</h2>
@@ -371,7 +381,10 @@
       </div>
 
       <!--  Pay bill -->
-      <div id="pay-bill-section" class="all-from-section mt-4 mb-[200px]">
+      <div
+        id="pay-bill-section"
+        class="all-from-section mt-4 mb-[200px] main-from-section"
+      >
         <div class="p-5">
           <h2 class="font-bold text-sm mb-4">Pay Bill</h2>
         </div>
@@ -456,6 +469,6 @@
       <!-- ! end from section -->
     </main>
 
-    <script src="./script/home.js"></script>
+    <script src="./script/app.js"></script>
   </body>
 </html>

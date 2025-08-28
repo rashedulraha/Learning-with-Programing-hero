@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>reusable code</title>
+  </head>
+
+  <style>
+    button {
+      padding: 8px 16px;
+      border: none;
+      background-color: rebeccapurple;
+      color: white;
+      border-radius: 6px;
+    }
+  </style>
+  <body>
+    <!--  actual content  -->
+
+    <h1 id="increment">0</h1>
+    <button id="btn-one">Button 1</button>
+    <button id="btn-two">Button 2</button>
+    <button id="btn-three">Button 3</button>
+    <button id="btn-four">Button 4</button>
+    <button id="btn-five">Button 5</button>
+    <button id="btn-six">Button 6</button>
+    <button id="btn-seven">Button 7</button>
+
+    <script>
+      const increment = document.getElementById("increment");
+      const btnOne = document.getElementById("btn-one");
+      const btnTwo = document.getElementById("btn-two");
+      const btnThree = document.getElementById("btn-three");
+      const btnFour = document.getElementById("btn-four");
+      const btnFive = document.getElementById("btn-five");
+      const btnSix = document.getElementById("btn-six");
+      const btnSeven = document.getElementById("btn-seven");
+
+      function getIncrementNumber(number) {
+        increment.innerText = number;
+      }
+
+      btnOne.addEventListener("click", function () {
+        getIncrementNumber("1");
+      });
+      btnTwo.addEventListener("click", function () {
+        getIncrementNumber("2");
+      });
+      btnThree.addEventListener("click", function () {
+        getIncrementNumber("3");
+      });
+      btnFour.addEventListener("click", function () {
+        getIncrementNumber("4");
+      });
+      btnFive.addEventListener("click", function () {
+        getIncrementNumber("5");
+      });
+      btnSix.addEventListener("click", function () {
+        getIncrementNumber("6");
+      });
+      btnSeven.addEventListener("click", function () {
+        getIncrementNumber("7");
+      });
+    </script>
+  </body>
+</html>
