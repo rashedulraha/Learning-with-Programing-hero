@@ -96,6 +96,7 @@
             Transfer Money
           </button>
           <button
+            id="get-bonus-main-btn"
             class="px-3 py-5 border-1 border-gray-300 rounded-lg flex items-center justify-center flex-col capitalize gap-2 font-normal active:bg-red-50"
           >
             <figure class="w-[24px] h-[24px]">
@@ -104,6 +105,7 @@
             Get Bonus
           </button>
           <button
+            id="Pay-Bill-main-btn"
             class="px-3 py-5 border-1 border-gray-300 rounded-lg flex items-center justify-center flex-col capitalize gap-2 font-normal active:bg-red-50"
           >
             <figure class="w-[24px] h-[24px]">
@@ -140,7 +142,7 @@
             >
             <select
               id="select"
-              class="py-2 px-3 w-full rounded-lg border-0 bg-[#f4f5f7] mt-3 outline-none text-gray-500"
+              class="py-2 px-3 w-full rounded-full bg-[#f4f5f7] mt-3 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600 text-gray-500"
             >
               <option disabled selected value="">Select bank</option>
               <option>Islami Bank Bangladesh Limited (IBBL)</option>
@@ -161,7 +163,7 @@
               type="number"
               id="bank-account-number"
               placeholder="Enter your valid bank account number"
-              class="w-full border-0 bg-[#f4f5f7] rounded-lg px-3 py-3 mt-3 outline-none text-gray-500"
+              class="w-full bg-[#f4f5f7] rounded-full px-3 py-2 mt-3 text-gray-500 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
             />
           </div>
 
@@ -176,7 +178,7 @@
               type="number"
               id="amount-to-add"
               placeholder="Add amount to deposit"
-              class="w-full border-0 bg-[#f4f5f7] rounded-lg px-3 py-3 mt-3 outline-none text-gray-500"
+              class="w-full bg-[#f4f5f7] rounded-full px-3 py-2 mt-3 text-gray-500 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
             />
           </div>
 
@@ -192,13 +194,13 @@
               id="pin-number"
               placeholder="Enter your 4 digit pin number"
               maxlength="4"
-              class="w-full border-0 bg-[#f4f5f7] rounded-lg px-3 py-3 mt-3 outline-none text-gray-500"
+              class="w-full bg-[#f4f5f7] rounded-full px-3 py-2 mt-3 text-gray-500 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
             />
           </div>
 
           <button
             id="add-money"
-            class="w-full rounded-3xl p-2 bg-[#0874F2] text-white mt-3 cursor-pointer"
+            class="w-full rounded-3xl p-2 bg-[#0874F2] text-white mt-3 active:to-blue-400 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600 cursor-pointer"
           >
             Add money
           </button>
@@ -225,7 +227,7 @@
               type="number"
               id="agent-number"
               placeholder="Enter 11 digit agent number"
-              class="w-full border-0 bg-[#f4f5f7] rounded-lg px-3 py-3 mt-3 outline-none text-gray-500"
+              class="w-full bg-[#f4f5f7] text-gray-500 rounded-full px-3 py-2 mt-3 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
             />
           </div>
           <!-- with draw section-->
@@ -239,7 +241,7 @@
               type="number"
               id="with-draw-amount"
               placeholder="Enter amount to withdraw"
-              class="w-full border-0 bg-[#f4f5f7] rounded-lg px-3 py-3 mt-3 outline-none text-gray-500"
+              class="w-full bg-[#f4f5f7] rounded-full px-3 py-2 mt-3 text-gray-500 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
             />
           </div>
 
@@ -255,13 +257,13 @@
               id="pin-number"
               placeholder="Enter your 4 digit pin number"
               maxlength="4"
-              class="w-full border-0 bg-[#f4f5f7] rounded-lg px-3 py-3 mt-3 outline-none text-gray-500"
+              class="w-full bg-[#f4f5f7] rounded-full px-3 py-2 mt-3 text-gray-500 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
             />
           </div>
 
           <button
             id="cash-Out"
-            class="w-full rounded-3xl p-2 bg-[#0874F2] text-white mt-3 cursor-pointer"
+            class="w-full rounded-3xl p-2 bg-[#0874F2] text-white mt-3 active:to-blue-400 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600 cursor-pointer"
           >
             Cash Out
           </button>
@@ -289,7 +291,7 @@
               type="number"
               id="agent-number"
               placeholder="Enter 11 digit agent number"
-              class="w-full border-0 bg-[#f4f5f7] rounded-lg px-3 py-3 mt-3 outline-none text-gray-500"
+              class="w-full bg-[#f4f5f7] rounded-full px-3 py-2 mt-3 text-gray-500 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
             />
           </div>
           <!-- with draw section-->
@@ -303,7 +305,7 @@
               type="number"
               id="with-draw-amount"
               placeholder="Enter amount to withdraw"
-              class="w-full border-0 bg-[#f4f5f7] rounded-lg px-3 py-3 mt-3 outline-none text-gray-500"
+              class="w-full bg-[#f4f5f7] rounded-full px-3 py-2 mt-3 text-gray-500 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
             />
           </div>
 
@@ -319,7 +321,7 @@
               id="pin-number"
               placeholder="Enter your 4 digit pin number"
               maxlength="4"
-              class="w-full border-0 bg-[#f4f5f7] rounded-lg px-3 py-3 mt-3 outline-none text-gray-500"
+              class="w-full bg-[#f4f5f7] rounded-full px-3 py-2 mt-3 text-gray-500 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
             />
           </div>
 
@@ -331,6 +333,127 @@
           </button>
         </form>
       </div>
+
+      <!-- Get bonus -->
+      <div
+        id="get-bonus-section"
+        class="all-from-section mt-4 mb-[200px] hidden"
+      >
+        <div class="p-5">
+          <h2 class="font-bold text-sm mb-4 capitalize">Transfer money</h2>
+        </div>
+
+        <form
+          class="bg-white rounded-lg p-5 flex flex-col items-center justify-center gap-4"
+        >
+          <!-- agent number adding section -->
+          <div class="w-full">
+            <label for="" class="capitalize text-gray-600 font-semibold text-sm"
+              >Enter Bonus Coupon</label
+            >
+            <input
+              type="number"
+              id="agent-number"
+              placeholder="Enter your Coupon"
+              class="w-full bg-[#f4f5f7] rounded-full px-3 py-2 mt-3 text-gray-500 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
+            />
+          </div>
+
+          <!-- pin -->
+
+          <button
+            id="get-bonus-btn"
+            class="w-full rounded-3xl p-2 bg-[#0874F2] text-white mt-3 cursor-pointer"
+          >
+            Get Bonus
+          </button>
+        </form>
+      </div>
+
+      <!--  Pay bill -->
+      <div id="pay-bill-section" class="all-from-section mt-4 mb-[200px]">
+        <div class="p-5">
+          <h2 class="font-bold text-sm mb-4">Pay Bill</h2>
+        </div>
+
+        <form
+          class="bg-white rounded-lg p-5 flex flex-col items-center justify-center gap-4"
+        >
+          <!-- select bank -->
+          <div class="w-full">
+            <label
+              for="select"
+              class="font-semibold text-sm text-gray-600 capitalize"
+              >Select bank</label
+            >
+            <select
+              id="select"
+              class="py-2 px-3 w-full rounded-full bg-[#f4f5f7] mt-3 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600 text-gray-500"
+            >
+              <option disabled selected value="">Select bank</option>
+              <option>Islami Bank Bangladesh Limited (IBBL)</option>
+              <option>Dutch-Bangla Bank Ltd. (DBBL)</option>
+              <option>Sonali Bank Ltd.</option>
+              <option>The City Bank Ltd</option>
+            </select>
+          </div>
+
+          <!-- bill account number -->
+          <div class="w-full">
+            <label
+              for="bank-account-number"
+              class="capitalize text-gray-600 font-semibold text-sm"
+              >Biller account number</label
+            >
+            <input
+              type="number"
+              id="bill-account-number"
+              placeholder="Enter your valid  account number"
+              class="w-full bg-[#f4f5f7] rounded-full px-3 py-2 mt-3 text-gray-500 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
+            />
+          </div>
+
+          <!-- amount -->
+          <div class="w-full">
+            <label
+              for="amount-to-pay"
+              class="capitalize text-gray-600 font-semibold text-sm"
+              >amount to pay</label
+            >
+            <input
+              type="number"
+              id="amount-to-pay"
+              placeholder=" Add amount to pay"
+              class="w-full bg-[#f4f5f7] rounded-full px-3 py-2 mt-3 text-gray-500 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
+            />
+          </div>
+
+          <!-- pin -->
+          <div class="w-full">
+            <label
+              for="pin-number"
+              class="capitalize text-gray-600 font-semibold text-sm"
+              >Pin number</label
+            >
+            <input
+              type="password"
+              id="pin-number"
+              placeholder="Enter your 4 digit pin number"
+              maxlength="4"
+              class="w-full bg-[#f4f5f7] rounded-full px-3 py-2 mt-3 text-gray-500 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
+            />
+          </div>
+
+          <button
+            id="add-money"
+            class="w-full rounded-3xl p-2 bg-[#0874F2] text-white mt-3 active:to-blue-400 border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600 cursor-pointer"
+          >
+            Add money
+          </button>
+        </form>
+      </div>
+
+      <!-- ! end from section -->
     </main>
 
     <script src="./script/home.js"></script>

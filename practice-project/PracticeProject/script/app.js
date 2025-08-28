@@ -15,14 +15,38 @@ logIn.addEventListener("click", function (e) {
   const inputMobileValue = inputMobileNumber.value.trim();
   const inputPinNumberValue = inputPinNumber.value.trim();
 
+  // if (
+  //   inputMobileValue === mobileDefaultValueSet &&
+  //   inputPinNumberValue === pinNumberDefaultValueSet
+  // ) {
+  //   sessionStorage.setItem("isLoggedIn", "true");
+  //   window.location.href = "home.html";
+  // } else {
+  //   alert("Invalid Number and pin\n Please  write a right number and pin");
+  // }
+  if (inputMobileValue === "" && inputPinNumberValue === "") {
+    alert("Please enter your phone number and pin\nTo login your account");
+    return;
+  }
+  if (inputMobileValue.length < 11 || inputMobileValue === "") {
+    alert("Invalid Mobile Number");
+    console.log("first");
+
+    return;
+  }
+
+  if (inputPinNumberValue.length < 4 || inputPinNumberValue.length > 4) {
+    alert("Invalid pin Number");
+    console.log("second");
+
+    return;
+  }
+
   if (
     inputMobileValue === mobileDefaultValueSet &&
     inputPinNumberValue === pinNumberDefaultValueSet
   ) {
-    sessionStorage.setItem("isLoggedIn", "true");
     window.location.href = "home.html";
-  } else {
-    alert("Invalid Number and pin\n Please  write a right number and pin");
   }
 });
 

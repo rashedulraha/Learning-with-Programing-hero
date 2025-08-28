@@ -56,8 +56,11 @@ const cashOutBtn = document.getElementById("cashOut-btn");
 const addMoneySection = document.getElementById("add-money-section");
 const cashOutSection = document.getElementById("cashOut-section");
 const transferSection = document.getElementById("transfer");
-
+const getBonus = document.getElementById("get-bonus-main-btn");
+const getBonusSection = document.getElementById("get-bonus-section");
 const transferBtn = document.getElementById("transfer-btn");
+const payBillMainBtn = document.getElementById("Pay-Bill-main-btn");
+const payBillMainSection = document.getElementById("pay-bill-section");
 
 addMoneyBtn.addEventListener("click", function () {
   addMoneySection.style.display = "block";
@@ -71,6 +74,16 @@ cashOutBtn.addEventListener("click", function () {
 
 transferBtn.addEventListener("click", () => {
   transferSection.style.display = "block";
+  addMoneySection.style.display = "none";
+});
+
+getBonus.addEventListener("click", () => {
+  getBonusSection.style.display = "block";
+  addMoneySection.style.display = "none";
+});
+
+payBillMainBtn.addEventListener("click", () => {
+  payBillMainSection.style.display = "block";
   addMoneySection.style.display = "none";
 });
 
