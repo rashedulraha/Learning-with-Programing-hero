@@ -17,7 +17,7 @@ function getValueFunction(id) {
   return stringToNumber;
 }
 
-//  function handle toggle
+//  function handle togglegit
 function handleToggle(id) {
   const mainFrom = document.getElementsByClassName("main-from-section");
   for (const from of mainFrom) {
@@ -32,7 +32,7 @@ function handleToggle(id) {
 //!  reusable function end
 
 //? Default values
-const defaultBankAccountNumber = 6404674043246540;
+const defaultBankAccountNumber = 12345678910;
 const defaultPinNumber = 1234;
 
 // ! addMoney functionality
@@ -67,7 +67,7 @@ addMoney.addEventListener("click", (e) => {
 
 // ! cashOut functionality
 
-const defaultAgentNumber = 13234313743453;
+const defaultAgentNumber = 12345678910;
 const cashOut = document.getElementById("cash-Out");
 
 cashOut.addEventListener("click", function (e) {

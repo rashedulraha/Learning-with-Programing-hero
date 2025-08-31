@@ -14,12 +14,3 @@
 // const newA = [...nayikas];
 
 // (myFunction) => {};
-// const myFunction = () => {};
-
-const obj = {
-  foo: 1,
-};
-
-obj.bar = 5;
-
-console.log(obj);
