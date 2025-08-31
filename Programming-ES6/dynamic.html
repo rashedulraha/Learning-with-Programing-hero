@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Greeting Card Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Pacifico&family=Lobster&family=Great+Vibes&family=Alex+Brush&family=Roboto:wght@300;400;700&display=swap");
+
+      .card-preview {
+        aspect-ratio: 3/4;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .gradient-bg-1 {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .gradient-bg-2 {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      }
+      .gradient-bg-3 {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      }
+      .gradient-bg-4 {
+        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      }
+      .gradient-bg-5 {
+        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+      }
+      .gradient-bg-6 {
+        background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+      }
+
+      .font-dancing {
+        font-family: "Dancing Script", cursive;
+      }
+      .font-pacifico {
+        font-family: "Pacifico", cursive;
+      }
+      .font-lobster {
+        font-family: "Lobster", cursive;
+      }
+      .font-vibes {
+        font-family: "Great Vibes", cursive;
+      }
+      .font-alex {
+        font-family: "Alex Brush", cursive;
+      }
+
+      .template-pattern-1 {
+        background-image: radial-gradient(
+            circle at 20% 80%,
+            rgba(255, 255, 255, 0.2) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(255, 255, 255, 0.2) 0%,
+            transparent 50%
+          );
+      }
+
+      .template-pattern-2 {
+        background-image: linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.1) 25%,
+            transparent 25%
+          ),
+          linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%);
+        background-size: 50px 50px;
+      }
+
+      .template-pattern-3 {
+        background-image: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 35px,
+          rgba(255, 255, 255, 0.1) 35px,
+          rgba(255, 255, 255, 0.1) 70px
+        );
+      }
+
+      .emoji-picker {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 8px;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+
+      .emoji-btn {
+        font-size: 24px;
+        padding: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .emoji-btn:hover {
+        background-color: #e5e7eb;
+        transform: scale(1.2);
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .floating {
+        animation: float 3s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto p-4 max-w-7xl">
+      <!-- Header -->
+      <header class="text-center mb-8">
+        <h1 class="text-4xl font-bold text-gray-800 mb-2">
+          <i class="fas fa-heart text-pink-500 mr-2"></i>
+          Dynamic Greeting Card Generator
+        </h1>
+        <p class="text-gray-600">
+          Create beautiful, personalized greeting cards in seconds
+        </p>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Customization Panel -->
+        <div class="lg:col-span-1 space-y-4">
+          <!-- Card Type -->
+          <div class="bg-white rounded-lg shadow-md p-4">
+            <h3 class="font-semibold text-lg mb-3 flex items-center">
+              <i class="fas fa-tag mr-2 text-purple-500"></i>
+              Card Type
+            </h3>
+            <select
+              id="cardType"
+              class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+            >
+              <option value="birthday">🎂 Birthday</option>
+              <option value="anniversary">💑 Anniversary</option>
+              <option value="thankyou">🙏 Thank You</option>
+              <option value="getwell">🌡️ Get Well Soon</option>
+              <option value="congratulations">🎉 Congratulations</option>
+              <option value="love">💕 Love</option>
+              <option value="holiday">🎄 Holiday</option>
+              <option value="custom">✨ Custom</option>
+            </select>
+          </div>
+
+          <!-- Template Selection -->
+          <div class="bg-white rounded-lg shadow-md p-4">
+            <h3 class="font-semibold text-lg mb-3 flex items-center">
+              <i class="fas fa-palette mr-2 text-pink-500"></i>
+              Template
+            </h3>
+            <div class="grid grid-cols-3 gap-2">
+              <button
+                class="template-btn h-20 rounded-lg gradient-bg-1 template-pattern-1 border-2 border-transparent hover:border-purple-500 transition-all"
+                data-template="1"
+              ></button>
+              <button
+                class="template-btn h-20 rounded-lg gradient-bg-2 template-pattern-2 border-2 border-transparent hover:border-pink-500 transition-all"
+                data-template="2"
+              ></button>
+              <button
+                class="template-btn h-20 rounded-lg gradient-bg-3 template-pattern-3 border-2 border-transparent hover:border-blue-500 transition-all"
+                data-template="3"
+              ></button>
+              <button
+                class="template-btn h-20 rounded-lg gradient-bg-4 border-2 border-transparent hover:border-green-500 transition-all"
+                data-template="4"
+              ></button>
+              <button
+                class="template-btn h-20 rounded-lg gradient-bg-5 border-2 border-transparent hover:border-yellow-500 transition-all"
+                data-template="5"
+              ></button>
+              <button
+                class="template-btn h-20 rounded-lg gradient-bg-6 border-2 border-transparent hover:border-indigo-500 transition-all"
+                data-template="6"
+              ></button>
+            </div>
+          </div>
+
+          <!-- Message Input -->
+          <div class="bg-white rounded-lg shadow-md p-4">
+            <h3 class="font-semibold text-lg mb-3 flex items-center">
+              <i class="fas fa-comment mr-2 text-blue-500"></i>
+              Your Message
+            </h3>
+            <textarea
+              id="cardMessage"
+              rows="4"
+              class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              placeholder="Write your heartfelt message here..."
+            ></textarea>
+          </div>
+
+          <!-- Recipient Name -->
+          <div class="bg-white rounded-lg shadow-md p-4">
+            <h3 class="font-semibold text-lg mb-3 flex items-center">
+              <i class="fas fa-user mr-2 text-green-500"></i>
+              Recipient Name
+            </h3>
+            <input
+              type="text"
+              id="recipientName"
+              class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              placeholder="Enter recipient's name"
+            />
+          </div>
+
+          <!-- Font Selection -->
+          <div class="bg-white rounded-lg shadow-md p-4">
+            <h3 class="font-semibold text-lg mb-3 flex items-center">
+              <i class="fas fa-font mr-2 text-indigo-500"></i>
+              Font Style
+            </h3>
+            <select
+              id="fontStyle"
+              class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            >
+              <option value="font-dancing">Dancing Script</option>
+              <option value="font-pacifico">Pacifico</option>
+              <option value="font-lobster">Lobster</option>
+              <option value="font-vibes">Great Vibes</option>
+              <option value="font-alex">Alex Brush</option>
+              <option value="font-roboto">Roboto</option>
+            </select>
+          </div>
+
+          <!-- Text Color -->
+          <div class="bg-white rounded-lg shadow-md p-4">
+            <h3 class="font-semibold text-lg mb-3 flex items-center">
+              <i class="fas fa-paint-brush mr-2 text-red-500"></i>
+              Text Color
+            </h3>
+            <div class="flex gap-2">
+              <input
+                type="color"
+                id="textColor"
+                value="#ffffff"
+                class="w-16 h-10 rounded cursor-pointer"
+              />
+              <div class="flex-1 grid grid-cols-6 gap-1">
+                <button
+                  class="color-preset w-8 h-8 rounded bg-white border-2 border-gray-300"
+                  data-color="#ffffff"
+                ></button>
+                <button
+                  class="color-preset w-8 h-8 rounded bg-black"
+                  data-color="#000000"
+                ></button>
+                <button
+                  class="color-preset w-8 h-8 rounded bg-red-500"
+                  data-color="#ef4444"
+                ></button>
+                <button
+                  class="color-preset w-8 h-8 rounded bg-blue-500"
+                  data-color="#3b82f6"
+                ></button>
+                <button
+                  class="color-preset w-8 h-8 rounded bg-green-500"
+                  data-color="#10b981"
+                ></button>
+                <button
+                  class="color-preset w-8 h-8 rounded bg-yellow-400"
+                  data-color="#fbbf24"
+                ></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Emoji Picker -->
+          <div class="bg-white rounded-lg shadow-md p-4">
+            <h3 class="font-semibold text-lg mb-3 flex items-center">
+              <i class="fas fa-smile mr-2 text-yellow-500"></i>
+              Add Emoji
+            </h3>
+            <div class="emoji-picker">
+              <button class="emoji-btn" data-emoji="❤️">❤️</button>
+              <button class="emoji-btn" data-emoji="🎉">🎉</button>
+              <button class="emoji-btn" data-emoji="🎂">🎂</button>
+              <button class="emoji-btn" data-emoji="🌟">🌟</button>
+              <button class="emoji-btn" data-emoji="💐">💐</button>
+              <button class="emoji-btn" data-emoji="🎈">🎈</button>
+              <button class="emoji-btn" data-emoji="🌸">🌸</button>
+              <button class="emoji-btn" data-emoji="🦋">🦋</button>
+              <button class="emoji-btn" data-emoji="🌈">🌈</button>
+              <button class="emoji-btn" data-emoji="⭐">⭐</button>
+              <button class="emoji-btn" data-emoji="🎁">🎁</button>
+              <button class="emoji-btn" data-emoji="🌺">🌺</button>
+              <button class="emoji-btn" data-emoji="💖">💖</button>
+              <button class="emoji-btn" data-emoji="🌻">🌻</button>
+              <button class="emoji-btn" data-emoji="🎊">🎊</button>
+              <button class="emoji-btn" data-emoji="✨">✨</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Preview -->
+        <div class="lg:col-span-2">
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="font-semibold text-lg mb-4 flex items-center">
+              <i class="fas fa-eye mr-2 text-purple-500"></i>
+              Card Preview
+            </h3>
+
+            <div class="flex justify-center mb-6">
+              <div
+                id="cardPreview"
+                class="card-preview w-full max-w-md gradient-bg-1 template-pattern-1 rounded-lg shadow-2xl p-8 text-white relative"
+              >
+                <div class="absolute top-4 right-4 floating">
+                  <span class="text-4xl">🎂</span>
+                </div>
+
+                <div
+                  class="h-full flex flex-col justify-center items-center text-center"
+                >
+                  <h2
+                    id="previewTitle"
+                    class="text-3xl font-bold mb-4 font-dancing"
+                  >
+                    Happy Birthday!
+                  </h2>
+                  <p id="previewRecipient" class="text-xl mb-6 font-dancing">
+                    Dear Friend
+                  </p>
+                  <p
+                    id="previewMessage"
+                    class="text-lg leading-relaxed font-dancing"
+                  >
+                    Wishing you a day filled with happiness and a year filled
+                    with joy!
+                  </p>
+                  <div class="mt-8 text-sm opacity-75">
+                    <p>With love,</p>
+                    <p id="previewSender">Your Friend</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap gap-3 justify-center">
+              <button
+                id="downloadBtn"
+                class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
+              >
+                <i class="fas fa-download mr-2"></i>
+                Download Card
+              </button>
+              <button
+                id="shareBtn"
+                class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
+              >
+                <i class="fas fa-share-alt mr-2"></i>
+                Share
+              </button>
+              <button
+                id="resetBtn"
+                class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
+              >
+                <i class="fas fa-redo mr-2"></i>
+                Reset
+              </button>
+            </div>
+          </div>
+
+          <!-- Tips Section -->
+          <div class="bg-white rounded-lg shadow-md p-6 mt-6">
+            <h3 class="font-semibold text-lg mb-3 flex items-center">
+              <i class="fas fa-lightbulb mr-2 text-yellow-500"></i>
+              Tips for Great Cards
+            </h3>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                <span>Keep your message personal and heartfelt</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                <span>Choose colors that match the occasion</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                <span>Add emojis to make your card more expressive</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                <span>Preview your card before downloading</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Card data
+      const cardData = {
+        type: "birthday",
+        template: "1",
+        message:
+          "Wishing you a day filled with happiness and a year filled with joy!",
+        recipient: "Dear Friend",
+        font: "font-dancing",
+        color: "#ffffff",
+        emoji: "🎂",
+      };
+
+      const cardTemplates = {
+        birthday: { title: "Happy Birthday!", emoji: "🎂" },
+        anniversary: { title: "Happy Anniversary!", emoji: "💑" },
+        thankyou: { title: "Thank You!", emoji: "🙏" },
+        getwell: { title: "Get Well Soon!", emoji: "🌡️" },
+        congratulations: { title: "Congratulations!", emoji: "🎉" },
+        love: { title: "With Love", emoji: "💕" },
+        holiday: { title: "Happy Holidays!", emoji: "🎄" },
+        custom: { title: "Special Message", emoji: "✨" },
+      };
+
+      // DOM elements
+      const cardPreview = document.getElementById("cardPreview");
+      const previewTitle = document.getElementById("previewTitle");
+      const previewRecipient = document.getElementById("previewRecipient");
+      const previewMessage = document.getElementById("previewMessage");
+      const previewSender = document.getElementById("previewSender");
+
+      // Event listeners
+      document
+        .getElementById("cardType")
+        .addEventListener("change", updateCardType);
+      document
+        .getElementById("cardMessage")
+        .addEventListener("input", updateMessage);
+      document
+        .getElementById("recipientName")
+        .addEventListener("input", updateRecipient);
+      document
+        .getElementById("fontStyle")
+        .addEventListener("change", updateFont);
+      document
+        .getElementById("textColor")
+        .addEventListener("input", updateTextColor);
+
+      // Template buttons
+      document.querySelectorAll(".template-btn").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          document
+            .querySelectorAll(".template-btn")
+            .forEach((b) => b.classList.remove("ring-4", "ring-offset-2"));
+          this.classList.add("ring-4", "ring-offset-2");
+          cardData.template = this.dataset.template;
+          updateTemplate();
+        });
+      });
+
+      // Color presets
+      document.querySelectorAll(".color-preset").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          cardData.color = this.dataset.color;
+          document.getElementById("textColor").value = this.dataset.color;
+          updateTextColor();
+        });
+      });
+
+      // Emoji buttons
+      document.querySelectorAll(".emoji-btn").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const emoji = this.dataset.emoji;
+          const messageInput = document.getElementById("cardMessage");
+          messageInput.value += " " + emoji;
+          updateMessage();
+        });
+      });
+
+      // Action buttons
+      document
+        .getElementById("downloadBtn")
+        .addEventListener("click", downloadCard);
+      document.getElementById("shareBtn").addEventListener("click", shareCard);
+      document.getElementById("resetBtn").addEventListener("click", resetCard);
+
+      // Update functions
+      function updateCardType() {
+        cardData.type = document.getElementById("cardType").value;
+        const template = cardTemplates[cardData.type];
+        previewTitle.textContent = template.title;
+        cardData.emoji = template.emoji;
+        updateEmoji();
+      }
+
+      function updateMessage() {
+        cardData.message =
+          document.getElementById("cardMessage").value ||
+          "Wishing you a day filled with happiness and a year filled with joy!";
+        previewMessage.textContent = cardData.message;
+      }
+
+      function updateRecipient() {
+        cardData.recipient =
+          document.getElementById("recipientName").value || "Dear Friend";
+        previewRecipient.textContent = cardData.recipient;
+      }
+
+      function updateFont() {
+        cardData.font = document.getElementById("fontStyle").value;
+        cardPreview.classList.remove(
+          "font-dancing",
+          "font-pacifico",
+          "font-lobster",
+          "font-vibes",
+          "font-alex",
+          "font-roboto"
+        );
+        cardPreview.classList.add(cardData.font);
+      }
+
+      function updateTextColor() {
+        cardData.color = document.getElementById("textColor").value;
+        cardPreview.style.color = cardData.color;
+      }
+
+      function updateTemplate() {
+        cardPreview.className = `card-preview w-full max-w-md gradient-bg-${cardData.template} template-pattern-${cardData.template} rounded-lg shadow-2xl p-8 text-white relative ${cardData.font}`;
+        cardPreview.style.color = cardData.color;
+      }
+
+      function updateEmoji() {
+        const emojiElement = cardPreview.querySelector(".floating span");
+        emojiElement.textContent = cardData.emoji;
+      }
+
+      function downloadCard() {
+        // Create canvas
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        const cardRect = cardPreview.getBoundingClientRect();
+
+        canvas.width = 600;
+        canvas.height = 800;
+
+        // Draw background
+        const gradient = ctx.createLinearGradient(
+          0,
+          0,
+          canvas.width,
+          canvas.height
+        );
+        const colors = {
+          1: ["#667eea", "#764ba2"],
+          2: ["#f093fb", "#f5576c"],
+          3: ["#4facfe", "#00f2fe"],
+          4: ["#43e97b", "#38f9d7"],
+          5: ["#fa709a", "#fee140"],
+          6: ["#30cfd0", "#330867"],
+        };
+
+        gradient.addColorStop(0, colors[cardData.template][0]);
+        gradient.addColorStop(1, colors[cardData.template][1]);
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Draw text
+        ctx.fillStyle = cardData.color;
+        ctx.textAlign = "center";
+
+        // Title
+        ctx.font = "bold 48px Arial";
+        ctx.fillText(previewTitle.textContent, canvas.width / 2, 150);
+
+        // Recipient
+        ctx.font = "32px Arial";
+        ctx.fillText(previewRecipient.textContent, canvas.width / 2, 220);
+
+        // Message
+        ctx.font = "24px Arial";
+        const words = previewMessage.textContent.split(" ");
+        let line = "";
+        let y = 350;
+
+        for (let n = 0; n < words.length; n++) {
+          const testLine = line + words[n] + " ";
+          const metrics = ctx.measureText(testLine);
+          const testWidth = metrics.width;
+
+          if (testWidth > canvas.width - 100 && n > 0) {
+            ctx.fillText(line, canvas.width / 2, y);
+            line = words[n] + " ";
+            y += 40;
+          } else {
+            line = testLine;
+          }
+        }
+        ctx.fillText(line, canvas.width / 2, y);
+
+        // Sender
+        ctx.font = "18px Arial";
+        ctx.fillText("With love,", canvas.width / 2, canvas.height - 100);
+        ctx.fillText("Your Friend", canvas.width / 2, canvas.height - 70);
+
+        // Download
+        canvas.toBlob(function (blob) {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = `greeting-card-${Date.now()}.png`;
+          a.click();
+          URL.revokeObjectURL(url);
+        });
+      }
+
+      function shareCard() {
+        if (navigator.share) {
+          navigator.share({
+            title: "My Greeting Card",
+            text: `I created a special greeting card for ${cardData.recipient}!`,
+            url: window.location.href,
+          });
+        } else {
+          // Fallback - copy to clipboard
+          const text = `I created a special greeting card for ${cardData.recipient}! Check it out: ${window.location.href}`;
+          navigator.clipboard.writeText(text).then(() => {
+            alert("Link copied to clipboard!");
+          });
+        }
+      }
+
+      function resetCard() {
+        document.getElementById("cardType").value = "birthday";
+        document.getElementById("cardMessage").value = "";
+        document.getElementById("recipientName").value = "";
+        document.getElementById("fontStyle").value = "font-dancing";
+        document.getElementById("textColor").value = "#ffffff";
+
+        cardData.type = "birthday";
+        cardData.message =
+          "Wishing you a day filled with happiness and a year filled with joy!";
+        cardData.recipient = "Dear Friend";
+        cardData.font = "font-dancing";
+        cardData.color = "#ffffff";
+        cardData.template = "1";
+
+        updateCardType();
+        updateMessage();
+        updateRecipient();
+        updateFont();
+        updateTextColor();
+        updateTemplate();
+
+        document
+          .querySelectorAll(".template-btn")
+          .forEach((b) => b.classList.remove("ring-4", "ring-offset-2"));
+        document
+          .querySelector('[data-template="1"]')
+          .classList.add("ring-4", "ring-offset-2");
+      }
+
+      // Initialize
+      document
+        .querySelector('[data-template="1"]')
+        .classList.add("ring-4", "ring-offset-2");
+    </script>
+  </body>
+</html>
