@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Essence Mascara Lash Princess - Beauty Product</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f9f6f7;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        border-bottom: 1px solid #e8e8e8;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: #d291bc;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 25px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #555;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: #d291bc;
+      }
+
+      .cart-icon {
+        position: relative;
+        font-size: 20px;
+        color: #555;
+        cursor: pointer;
+      }
+
+      .cart-count {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background-color: #d291bc;
+        color: white;
+        font-size: 12px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .product-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin: 40px 0;
+      }
+
+      .product-image {
+        flex: 1;
+        min-width: 300px;
+        background: linear-gradient(135deg, #f8e1f4 0%, #fcebf1 100%);
+        border-radius: 12px;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .product-image img {
+        max-width: 100%;
+        height: auto;
+        transform: rotate(-5deg);
+        filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+      }
+
+      .product-details {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .category {
+        color: #d291bc;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+      }
+
+      .product-title {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #333;
+      }
+
+      .product-description {
+        color: #666;
+        margin-bottom: 20px;
+        line-height: 1.8;
+      }
+
+      .brand {
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      .rating {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .stars {
+        color: #ffc107;
+      }
+
+      .rating-value {
+        font-weight: 600;
+        color: #555;
+      }
+
+      .price-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 25px;
+      }
+
+      .current-price {
+        font-size: 28px;
+        font-weight: 700;
+        color: #d291bc;
+      }
+
+      .original-price {
+        font-size: 18px;
+        color: #999;
+        text-decoration: line-through;
+      }
+
+      .discount-badge {
+        background-color: #ff6b6b;
+        color: white;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .stock {
+        color: #4caf50;
+        font-weight: 600;
+        margin-bottom: 25px;
+      }
+
+      .tags {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 25px;
+      }
+
+      .tag {
+        background-color: #f3e5f5;
+        color: #7b1fa2;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .add-to-cart {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+
+      .quantity {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .quantity-btn {
+        background: none;
+        border: none;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        cursor: pointer;
+        background-color: #f5f5f5;
+      }
+
+      .quantity-input {
+        width: 50px;
+        height: 40px;
+        text-align: center;
+        border: none;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        font-size: 16px;
+      }
+
+      .add-to-cart-btn {
+        flex: 1;
+        background-color: #d291bc;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 0 25px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .add-to-cart-btn:hover {
+        background-color: #c37ab3;
+      }
+
+      .product-info {
+        background-color: white;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+      }
+
+      .info-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #333;
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+      }
+
+      .info-item {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .info-label {
+        font-size: 12px;
+        color: #888;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+
+      .info-value {
+        font-weight: 500;
+        color: #555;
+      }
+
+      .dimensions {
+        display: flex;
+        gap: 15px;
+      }
+
+      .dimension-item {
+        text-align: center;
+        flex: 1;
+      }
+
+      .dimension-value {
+        font-size: 18px;
+        font-weight: 600;
+        color: #d291bc;
+      }
+
+      .dimension-label {
+        font-size: 12px;
+        color: #888;
+      }
+
+      footer {
+        text-align: center;
+        padding: 30px 0;
+        color: #888;
+        border-top: 1px solid #e8e8e8;
+        margin-top: 40px;
+      }
+
+      @media (max-width: 768px) {
+        .product-section {
+          flex-direction: column;
+        }
+
+        .nav-links {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">BeautyShop</div>
+        <div class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">Products</a>
+          <a href="#">Brands</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </div>
+      </header>
+
+      <section class="product-section">
+        <div class="product-image">
+          <img
+            src="https://via.placeholder.com/400x500/f8e1f4/7b1fa2?text=Essence+Mascara"
+            alt="Essence Mascara Lash Princess"
+          />
+        </div>
+
+        <div class="product-details">
+          <div class="category">beauty</div>
+          <h1 class="product-title">Essence Mascara Lash Princess</h1>
+          <p class="product-description">
+            The Essence Mascara Lash Princess is a popular mascara known for its
+            volumizing and lengthening effects. Achieve dramatic lashes with
+            this long-lasting and cruelty-free formula.
+          </p>
+
+          <div class="brand">Brand: Essence</div>
+
+          <div class="rating">
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <div class="rating-value">2.56/5</div>
+          </div>
+
+          <div class="price-section">
+            <div class="current-price">$8.94</div>
+            <div class="original-price">$9.99</div>
+            <div class="discount-badge">10.48% OFF</div>
+          </div>
+
+          <div class="stock">In Stock (99 available)</div>
+
+          <div class="tags">
+            <span class="tag">beauty</span>
+            <span class="tag">mascara</span>
+            <span class="tag">cruelty-free</span>
+          </div>
+
+          <div class="add-to-cart">
+            <div class="quantity">
+              <button class="quantity-btn">-</button>
+              <input type="text" class="quantity-input" value="1" />
+              <button class="quantity-btn">+</button>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+
+          <div class="product-info">
+            <h3 class="info-title">Product Details</h3>
+            <div class="info-grid">
+              <div class="info-item">
+                <span class="info-label">SKU</span>
+                <span class="info-value">BEA-ESS-ESS-001</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Weight</span>
+                <span class="info-value">4 oz</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Dimensions</span>
+                <div class="dimensions">
+                  <div class="dimension-item">
+                    <div class="dimension-value">15.14"</div>
+                    <div class="dimension-label">Width</div>
+                  </div>
+                  <div class="dimension-item">
+                    <div class="dimension-value">13.08"</div>
+                    <div class="dimension-label">Height</div>
+                  </div>
+                  <div class="dimension-item">
+                    <div class="dimension-value">22.99"</div>
+                    <div class="dimension-label">Depth</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>© 2023 BeautyShop. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script>
+      // Simple interactivity for the product page
+      document.addEventListener("DOMContentLoaded", function () {
+        const minusBtn = document.querySelector(".quantity-btn:first-child");
+        const plusBtn = document.querySelector(".quantity-btn:last-child");
+        const quantityInput = document.querySelector(".quantity-input");
+        const addToCartBtn = document.querySelector(".add-to-cart-btn");
+        const cartCount = document.querySelector(".cart-count");
+
+        let count = 0;
+
+        minusBtn.addEventListener("click", function () {
+          let currentValue = parseInt(quantityInput.value);
+          if (currentValue > 1) {
+            quantityInput.value = currentValue - 1;
+          }
+        });
+
+        plusBtn.addEventListener("click", function () {
+          let currentValue = parseInt(quantityInput.value);
+          quantityInput.value = currentValue + 1;
+        });
+
+        addToCartBtn.addEventListener("click", function () {
+          let quantity = parseInt(quantityInput.value);
+          count += quantity;
+          cartCount.textContent = count;
+
+          // Show added feedback
+          addToCartBtn.textContent = "Added to Cart!";
+          setTimeout(() => {
+            addToCartBtn.textContent = "Add to Cart";
+          }, 1500);
+        });
+      });
+    </script>
+  </body>
+</html>
