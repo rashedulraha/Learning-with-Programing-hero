@@ -24,19 +24,62 @@
     />
   </head>
   <body>
-    <header>
-      <div class="navbar bg-base-100 shadow-sm">
-        <div class="navbar-start flex justify-between w-[86%]">
-          <a class="btn btn-ghost text-xl"
-            ><span class="text-lg font-bold">English</span>
-            <figure><img src="./assets/logo.png" alt="" /></figure>
-            <span class="text-lg font-semibold hing-siliguri"> জানালা</span></a
-          >
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+    <header class="shadow-sm">
+      <div class="navbar bg-base-100 container mx-auto">
+        <!-- Navbar Start -->
+        <div class="navbar-start">
+          <a href="/" class="flex items-center gap-2 btn btn-ghost">
+            <span class="text-lg font-bold">English</span>
+            <figure class="w-8 h-8">
+              <img
+                src="./assets/logo.png"
+                alt="Janala Logo"
+                class="w-full h-full object-contain"
+              />
+            </figure>
+            <span class="text-lg font-semibold font-[Hind-Siliguri]"
+              >জানালা</span
+            >
+          </a>
+        </div>
+
+        <!--! Navbar Center (Large screen menu) -->
+        <div class="navbar-end hidden lg:flex">
+          <ul class="menu menu-horizontal px-1 space-x-3">
+            <li>
+              <a
+                href="faq"
+                class="btn btn-outline btn-primary flex items-center gap-1"
+              >
+                <i class="bi bi-question-circle-fill"></i> FAQ
+              </a>
+            </li>
+            <li>
+              <a
+                href="learn"
+                class="btn btn-outline btn-primary flex items-center gap-1"
+              >
+                <i class="bi bi-book-fill"></i> Learn
+              </a>
+            </li>
+            <li>
+              <a
+                href="logout"
+                class="btn btn-outline btn-primary flex items-center gap-1"
+              >
+                <i class="bi bi-box-arrow-right"></i> Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!--! Navbar End (Mobile Dropdown) -->
+        <div class="navbar-end lg:hidden">
+          <div class="dropdown dropdown-end">
+            <label tabindex="0" class="btn btn-ghost">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
+                class="h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -45,72 +88,108 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
+                  d="M4 6h16M4 12h16M4 18h16"
                 />
               </svg>
-            </div>
+            </label>
             <ul
               tabindex="0"
-              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-6 w-52 p-2 shadow"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a href="faq" class="hover:bg-gray-500">
-                  <i class="bi bi-question-circle-fill"></i> FAQ</a
-                >
+                <a href="faq" class="flex items-center gap-2">
+                  <i class="bi bi-question-circle-fill"></i> FAQ
+                </a>
               </li>
               <li>
-                <a href="faq" class="">
-                  <i class="bi bi-book-fill"></i> Learn</a
-                >
+                <a href="learn" class="flex items-center gap-2">
+                  <i class="bi bi-book-fill"></i> Learn
+                </a>
               </li>
               <li>
-                <a href="faq" class="">
-                  <i class="bi bi-box-arrow-right"></i>Logout</a
-                >
+                <a href="logout" class="flex items-center gap-2">
+                  <i class="bi bi-box-arrow-right"></i> Logout
+                </a>
               </li>
             </ul>
           </div>
-        </div>
-        <div class="navbar-end hidden lg:flex">
-          <ul class="menu menu-horizontal px-1 space-x-4">
-            <li>
-              <a href="faq" class="btn btn-outline btn-primary">
-                <i class="bi bi-question-circle-fill"></i> FAQ</a
-              >
-            </li>
-            <li>
-              <a href="faq" class="btn btn-outline btn-primary">
-                <i class="bi bi-book-fill"></i> Learn</a
-              >
-            </li>
-            <li>
-              <a href="faq" class="btn btn-outline btn-primary">
-                <i class="bi bi-box-arrow-right"></i>Logout</a
-              >
-            </li>
-          </ul>
         </div>
       </div>
     </header>
 
     <!--  start main section -->
     <main>
-      <!-- ! section 1 -->
-      <section class="w-11/12 flex items-center mx-auto">
-        <div id="content" class="flex-1">
-          <h1><span>English </span>is Easy !!</h1>
-          <p>
+      <!-- ! section one -->
+      <section
+        class="w-11/12 flex flex-col-reverse md:flex-row items-center mx-auto gap-10"
+      >
+        <div id="content" class="flex-1 text-center md:text-left">
+          <h1 class="text-4xl font-bold mb-6">
+            <span class="text-blue-400">English </span>is Easy !!
+          </h1>
+          <p
+            class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl font-normal hing-siliguri text-[#18181b]"
+          >
             আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
             আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে
             অন্য একটি Level এ
           </p>
+
+          <div class="mt-7">
+            <form class="flex flex-col items-center md:items-start space-y-4">
+              <div
+                class="flex flex-col items-center md:items-start w-full md:w-[60%]"
+              >
+                <label for="name" class="text-md">Enter your full name :</label>
+                <input type="text" class="input mt-1" />
+              </div>
+              <div
+                class="flex flex-col items-center md:items-start w-full md:w-[60%]"
+              >
+                <label for="password" class="text-md"
+                  >Enter your password :</label
+                >
+                <input type="password" class="input mt-1" />
+              </div>
+              <button class="btn btn-primary capitalize text-md font-bold">
+                get started
+              </button>
+            </form>
+          </div>
         </div>
         <div id="img" class="flex-1">
           <figure>
-            <img src="./assets/hero-student.png" alt="Hero img " />
+            <img
+              class="w-full h-full"
+              src="./assets/hero-student.png"
+              alt="Hero img "
+            />
           </figure>
         </div>
       </section>
+
+      <!--!  section two -->
+      <section class="w-11/12 mx-auto mt-16 md:mt-24">
+        <h2 class="text-4xl font-bold mb-6 text-center">
+          <span class="text-blue-400">Let's </span> learn vocabularies
+        </h2>
+
+        <div
+          id="laval-container"
+          class="flex items-center flex-wrap justify-center gap-5 mt-9"
+        >
+          <!-- <button class="btn">Lessons -1</button> -->
+        </div>
+      </section>
+
+      <!-- ! section three -->
+      <section
+        id="word-container"
+        class="w-11/12 mx-auto mt-10 p-6 sm:p-8 lg:p-10 bg-gray-100 rounded-lg grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+      ></section>
     </main>
+
+    <!-- ! adding script  -->
+    <script src="script/script.js"></script>
   </body>
 </html>
