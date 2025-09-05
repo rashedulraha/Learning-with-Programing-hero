@@ -72,7 +72,6 @@ const loadeWordDeteils = async (id) => {
 
 //  display world deteils
 const displayDeteils = (word) => {
-  console.log(word);
   const deteilsBox = document.getElementById("deteils_container");
   deteilsBox.innerHTML = "";
   const p = document.createElement("p");
@@ -196,3 +195,26 @@ const displayLessons = (lessons) => {
 };
 
 loadData();
+
+//  ! search btn
+const inputSearch = document.getElementById("inputSearch");
+const searchBtn = document.getElementById("btn-search");
+
+searchBtn.addEventListener("click", () => {
+  const inputSearchValue = inputSearch.value.trim().toLowerCase();
+
+  const url = `https://openapi.programming-hero.com/api/words/all`;
+
+  fetch(url)
+    .then((response) => {
+      return response.json();
+    })
+    .then((json) => {
+      const jsonData = json.data;
+
+      const filterWords = jsonData.filter((word) => {
+        return word.word.toLowerCase().includes(inputSearchValue);
+      });
+      displayLevelWord(filterWords);
+    });
+});
