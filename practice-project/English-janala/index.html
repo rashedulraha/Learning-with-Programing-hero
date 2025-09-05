@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>English | Best platform for learning english</title>
+    <link rel="stylesheet" href="./style/style.css" />
     <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
 
     <!--?  tailwind and daisy ui  cdn -->
@@ -49,7 +50,7 @@
             <li>
               <a
                 href="faq"
-                class="btn btn-outline btn-primary flex items-center gap-1"
+                class="btn btn-outline bg-blue-400 text-white hover:text-blue-400 hover:bg-white hover:border-blue-400 flex items-center gap-1"
               >
                 <i class="bi bi-question-circle-fill"></i> FAQ
               </a>
@@ -57,7 +58,7 @@
             <li>
               <a
                 href="learn"
-                class="btn btn-outline btn-primary flex items-center gap-1"
+                class="btn btn-outline bg-blue-400 text-white hover:text-blue-400 hover:bg-white hover:border-blue-400 flex items-center gap-1"
               >
                 <i class="bi bi-book-fill"></i> Learn
               </a>
@@ -65,7 +66,7 @@
             <li>
               <a
                 href="logout"
-                class="btn btn-outline btn-primary flex items-center gap-1"
+                class="btn btn-outline bg-blue-400 text-white hover:text-blue-400 hover:bg-white hover:border-blue-400 flex items-center gap-1"
               >
                 <i class="bi bi-box-arrow-right"></i> Logout
               </a>
@@ -151,7 +152,9 @@
                 >
                 <input type="password" class="input mt-1" />
               </div>
-              <button class="btn btn-primary capitalize text-md font-bold">
+              <button
+                class="btn bg-blue-400 hover:bg-white hover:text-blue-400 hover:border-blue-400 text-white capitalize text-md font-medium"
+              >
                 get started
               </button>
             </form>
@@ -195,10 +198,26 @@
             আপনি এখনও কোনো
             <span class="capitalize">lessons select</span> করেননি।
           </p>
-          <h2 class="mt-3 text-3xl text-[#3B25C1]">
+          <h2 class="mt-3 text-3xl text-blue-400">
             একটি <span> Lesson Select</span> করুন।
           </h2>
         </div>
+      </section>
+
+      <!--!  section four -->
+      <section>
+        <!--? Open the modal using ID.showModal() method -->
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box">
+            <div class="deteils-container"></div>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
       </section>
     </main>
 

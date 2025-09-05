@@ -12,6 +12,16 @@ const loadData = () => {
 
 // ?  loadLevelWord function
 
+//!  remove all btn classList = "active"
+
+const removeAtieve = () => {
+  const removeActive = document.querySelectorAll(".lessons-btn");
+  removeActive.forEach((btn) => {
+    btn.classList.remove("active");
+  });
+};
+
+//  ! load level world
 const loadLevelWord = (id) => {
   const url = `https://openapi.programming-hero.com/api/level/${id}`;
 
@@ -20,13 +30,31 @@ const loadLevelWord = (id) => {
       return Response.json();
     })
     .then((json) => {
-      const clickBtn = document.getElementById(`loadLevelWord(${id})`);
+      removeAtieve();
+      const clickBtn = document.getElementById(`loadLevelWord${id}`);
       clickBtn.classList.add("active");
+
+      //  ?call a display learn word
       displayLevelWord(json.data);
     });
 };
 
+//  !load world deteils
+const loadeWordDeteils = async (id) => {
+  const url = `https://openapi.programming-hero.com/api/word/${id}`;
+
+  const Response = await fetch(url);
+  const deteils = await Response.json();
+  console.log(deteils.data);
+};
+
+//  display world deteils
+const displayDeteils = (word) => {
+  console.log(word);
+};
 //!  get id to index.html file
+
+/*onclick="my_modal_5.showModal()"*/
 
 const wordContainer = document.getElementById("word-container");
 
@@ -42,7 +70,7 @@ const displayLevelWord = (jsonData) => {
           <p class="hing-siliguri text-md text-gray-500">
            এই <span>Lesson</span> এ এখনো কোন <span>vocabularies</span> যুক্ত করা হয়নি।
           </p>
-          <h2 class="mt-3 text-3xl text-[#3B25C1]">
+          <h2 class="mt-3 text-3xl text-blue-400">
             নেক্সট <span>Lesson</span> এ যান
           </h2>
         </div>`;
@@ -50,8 +78,6 @@ const displayLevelWord = (jsonData) => {
   }
 
   jsonData.forEach((lessonsWord) => {
-    console.log(lessonsWord);
-
     const divBox = document.createElement("div");
     divBox.innerHTML = ` <div class="bg-white px-5 py-10 rounded-lg text-center">
           <h3 class="text-2xl font-bold capitalize mb-2">${
@@ -71,9 +97,13 @@ const displayLevelWord = (jsonData) => {
             }</span>
           </p>
 
-          <div class="flex items-center justify-around mt-5 font-semibold">
-            <button class="btn hover:bg-blue-400 transition-all  text-blue-600 hover:text-white"><i class="bi bi-question-circle-fill text-xl cursor-pointer  "></i></button>
-            <button class="btn hover:bg-blue-400 transition-all  text-blue-600 hover:text-white">
+         
+
+          <div class="flex items-center justify-between  mt-5 font-semibold">
+            <button onclick="loadeWordDeteils(${
+              lessonsWord.id
+            })"  class="btn border-blue-400 hover:bg-blue-400 transition-all  text-blue-600 hover:text-white"><i class="bi bi-question-circle-fill text-xl cursor-pointer  "></i></button>
+            <button class="btn border-blue-400 hover:bg-blue-400 transition-all  text-blue-600 hover:text-white">
             <i class="bi bi-volume-up-fill text-xl cursor-pointer"></i></button>
             
           </div>
@@ -91,9 +121,15 @@ const displayLessons = (lessons) => {
   lessons.forEach((itemLessons) => {
     const btnDiv = document.createElement("div");
 
-    btnDiv.innerHTML = `<button id="loadLevelWord(${itemLessons.level_no})" onclick="loadLevelWord(${itemLessons.level_no})" class="btn btn-outline btn-primary "> <i class="bi bi-book-fill"></i>lessons - ${itemLessons.level_no}</button>`;
+    btnDiv.innerHTML = `<button
+      id="loadLevelWord${itemLessons.level_no}"
+      onclick="loadLevelWord(${itemLessons.level_no})"
+      class="btn btn-outline border-blue-400 text-blue-400  hover:text-blue-400 hover:bg-white hover:border-blue-400 lessons-btn"
+    >
+      <i class="bi bi-book-fill"></i>lessons - ${itemLessons.level_no}
+    </button>`;
 
-    // !  appendChild
+    // !  appendChildloadLevelWord${itemLessons.level_no}
     lavalContainer.appendChild(btnDiv);
   });
 };
