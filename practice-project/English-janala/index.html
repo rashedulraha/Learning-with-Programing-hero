@@ -29,7 +29,10 @@
       <div class="navbar bg-base-100 container mx-auto">
         <!-- Navbar Start -->
         <div class="navbar-start">
-          <a href="/" class="flex items-center gap-2 btn btn-ghost">
+          <a
+            href="/"
+            class="flex items-center gap-2 btn hover:bg-blue-50 hover:text-blue-400 border-none btn-ghost"
+          >
             <span class="text-lg font-bold">English</span>
             <figure class="w-8 h-8">
               <img
@@ -50,7 +53,7 @@
             <li>
               <a
                 href="faq"
-                class="btn btn-outline bg-blue-400 text-white hover:text-blue-400 hover:bg-white hover:border-blue-400 flex items-center gap-1"
+                class="btn btn-outline border-blue-400 text-blue-400 hover:text-white hover:bg-blue-400 hover:border-blue-400 flex items-center gap-1"
               >
                 <i class="bi bi-question-circle-fill"></i> FAQ
               </a>
@@ -58,7 +61,7 @@
             <li>
               <a
                 href="learn"
-                class="btn btn-outline bg-blue-400 text-white hover:text-blue-400 hover:bg-white hover:border-blue-400 flex items-center gap-1"
+                class="btn btn-outline border-blue-400 text-blue-400 hover:text-white hover:bg-blue-400 hover:border-blue-400 flex items-center gap-1"
               >
                 <i class="bi bi-book-fill"></i> Learn
               </a>
@@ -66,9 +69,9 @@
             <li>
               <a
                 href="logout"
-                class="btn btn-outline bg-blue-400 text-white hover:text-blue-400 hover:bg-white hover:border-blue-400 flex items-center gap-1"
+                class="btn btn-outline border-blue-400 text-blue-400 hover:text-white hover:bg-blue-400 hover:border-blue-400 flex items-center gap-1"
               >
-                <i class="bi bi-box-arrow-right"></i> Logout
+                <i class="bi bi-door-closed-fill"></i> Logout
               </a>
             </li>
           </ul>
@@ -185,6 +188,14 @@
         </div>
       </section>
 
+      <!--? loading  section -->
+      <section
+        id="loaddingSpinaer"
+        class="flex items-center justify-center pt-10 hidden"
+      >
+        <span class="loading loading-spinner text-blue-400"></span>
+      </section>
+
       <!-- ! section three -->
       <section
         id="word-container"
@@ -209,11 +220,16 @@
         <!--? Open the modal using ID.showModal() method -->
         <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
           <div class="modal-box">
-            <div class="deteils-container"></div>
+            <div id="deteils_container">
+              <!--? word deteils container contect -->
+            </div>
             <div class="modal-action">
               <form method="dialog">
-                <!-- if there is a button in form, it will close the modal -->
-                <button class="btn">Close</button>
+                <button
+                  class="btn border-blue-400 bg-white text-blue-400 hover:text-white hover:bg-blue-400 capitalize"
+                >
+                  Complete Learning
+                </button>
               </form>
             </div>
           </div>

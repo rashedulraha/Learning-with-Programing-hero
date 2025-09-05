@@ -1,3 +1,4 @@
+//! load word function
 const loadData = () => {
   const jsonData = "https://openapi.programming-hero.com/api/levels/all";
 
@@ -10,7 +11,27 @@ const loadData = () => {
     });
 };
 
-// ?  loadLevelWord function
+//!  adding synonmFunction
+const synonymFunction = (arr) => {
+  const htmlElement = arr.map(
+    (element) =>
+      `<span class=" px-3 py-2 rounded-sm   text-white capitalize  textwhite bg-blue-400 border-blue-400">${element}</span>`
+  );
+  return htmlElement.join(" ");
+};
+
+//  ! lodding spiner
+
+const LoaddingSpiner = (spiner) => {
+  if (spiner == true) {
+    document.getElementById("loaddingSpinaer").classList.remove("hidden");
+
+    document.getElementById("word-container").classList.add("hidden");
+  } else {
+    document.getElementById("word-container").classList.remove("hidden");
+    document.getElementById("loaddingSpinaer").classList.add("hidden");
+  }
+};
 
 //!  remove all btn classList = "active"
 
@@ -23,6 +44,7 @@ const removeAtieve = () => {
 
 //  ! load level world
 const loadLevelWord = (id) => {
+  LoaddingSpiner(true);
   const url = `https://openapi.programming-hero.com/api/level/${id}`;
 
   fetch(url)
@@ -45,12 +67,48 @@ const loadeWordDeteils = async (id) => {
 
   const Response = await fetch(url);
   const deteils = await Response.json();
-  console.log(deteils.data);
+  displayDeteils(deteils.data);
 };
 
 //  display world deteils
 const displayDeteils = (word) => {
   console.log(word);
+  const deteilsBox = document.getElementById("deteils_container");
+  deteilsBox.innerHTML = "";
+  const p = document.createElement("p");
+  p.innerHTML = `
+   <h2 class="text-3xl font-bold text-blue-400 mb-3 capitalize">${
+     word.word
+   } (<i class="bi bi-mic-fill"></i> ইগার)</h2> 
+
+  <h3 class="text-xl text-stone-800 font-medium capitalize mb-2
+   " >Meaning</h3>
+  <p class="text-lg font-normal text-stone-900 hing-siliguri ">${
+    word.meaning ? word.meaning : "Missing word"
+  }</p>
+  
+  <h3 class="text-xl text-stone-800 font-medium capitalize mb-2
+   ">Example
+   </h3>
+
+  <p class="text-lg font-normal text-stone-900 ">${word.sentence}
+  </p>
+  
+<div class="mt-3 ">
+
+<h2 class="text-xl font-medium capitalize mb-3 text-blue-400" >synonym</h2>
+
+<div class="space-x-4 mt-3"> 
+
+<div class="space-x-4  "> 
+${synonymFunction(word.synonyms)}
+</div>
+</div>
+
+</div>`;
+  deteilsBox.append(p);
+  const modal = document.getElementById("my_modal_5");
+  modal.showModal();
 };
 //!  get id to index.html file
 
@@ -74,6 +132,7 @@ const displayLevelWord = (jsonData) => {
             নেক্সট <span>Lesson</span> এ যান
           </h2>
         </div>`;
+    LoaddingSpiner(false);
     return;
   }
 
@@ -110,6 +169,8 @@ const displayLevelWord = (jsonData) => {
         </div>`;
     wordContainer.appendChild(divBox);
   });
+
+  LoaddingSpiner(false);
 };
 
 //!  get id  to index.html file
