@@ -1,3 +1,10 @@
+// ! spice Word
+const pronounceWord = (word) => {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN";
+  window.speechSynthesis.speak(utterance);
+};
+
 //! load word function
 const loadData = () => {
   const jsonData = "https://openapi.programming-hero.com/api/levels/all";
@@ -161,7 +168,9 @@ const displayLevelWord = (jsonData) => {
             <button onclick="loadeWordDeteils(${
               lessonsWord.id
             })"  class="btn border-blue-400 hover:bg-blue-400 transition-all  text-blue-600 hover:text-white"><i class="bi bi-question-circle-fill text-xl cursor-pointer  "></i></button>
-            <button class="btn border-blue-400 hover:bg-blue-400 transition-all  text-blue-600 hover:text-white">
+            <button onclick="pronounceWord('${
+              lessonsWord.word
+            }')" class="btn border-blue-400 hover:bg-blue-400 transition-all  text-blue-600 hover:text-white">
             <i class="bi bi-volume-up-fill text-xl cursor-pointer"></i></button>
             
           </div>
