@@ -5,7 +5,7 @@
 // const arr5 = [0, ...arr1, 0, ...arr3];
 // console.log(arr5);
 
-//  copy object
+// ! copy object
 
 // const person = {
 //   name: "Rashedul islam",
@@ -30,12 +30,44 @@
 //   job: "frontend developer",
 // };
 
-// //  destructuring normal way
+// !  destructuring normal way
 
 // const name1 = personInfo.name;
 // const age1 = personInfo.age;
 // const job1 = personInfo.job;
 
-// //  destructuring way to  object
+//!  destructuring way to  object
 // const { name, age, job } = personInfo;
 // console.log(name, age, job);
+
+// more advance destructuring js
+// const user = {
+//   name: "Nothing",
+//   age: "i don't know",
+//   position: "header",
+// };
+
+// const MainUser = {
+//   UserName: "rashedul islam",
+//   email: "rashedulislam@nothing.js",
+// };
+
+// const { UserName, email } = MainUser;
+// console.log(UserName, email);
+
+// ! Renaming variable
+
+// const result = {
+//   id: 12,
+//   price: 250,
+// };
+
+// const { id: productID, price: productPrice } = result;
+// console.log(productID, productPrice);
+
+//  destructuring default value set and use
+const studentName = {
+  name: "Rashedul islam",
+};
+
+const { name, roll = 12 } = studentName;

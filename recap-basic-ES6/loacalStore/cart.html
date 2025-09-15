@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping cart</title>
+    <style>
+      .strong {
+        font-weight: bold;
+        color: red;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="product" placeholder="product" /><br />
+    <input type="text" id="quantity" placeholder="quantity" /><br />
+
+    <button onclick="handleProduct()">Add product</button>
+
+    <br />
+    <hr />
+
+    <div>
+      <h2>Add a new product</h2>
+      <ul id="listAdd"></ul>
+    </div>
+    <!--  adding js   -->
+    <script src="js/cart.js"></script>
+  </body>
+</html>
