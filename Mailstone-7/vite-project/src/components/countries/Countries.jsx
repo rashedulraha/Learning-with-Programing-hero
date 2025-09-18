@@ -1,9 +1,13 @@
-import React from "react";
+import React, { use } from "react";
 
-const Countries = () => {
+const Countries = ({ countriesLoadData }) => {
+  const countriesData = use(countriesLoadData);
+  const countries = countriesData.countries;
+  console.log(countries);
+
   return (
     <div>
-      <h1>Hello element</h1>
+      <h1>Countries length: {countries.length}</h1>
     </div>
   );
 };
