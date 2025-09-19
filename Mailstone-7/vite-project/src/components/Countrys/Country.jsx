@@ -1,16 +1,18 @@
 import { useState } from "react";
 
-const Country = ({ countryName, handleVisitedCountry }) => {
+const Country = ({
+  countryName,
+  handleVisitedCountry,
+  handleSaveFlagsItem,
+}) => {
   const [visited, setVisited] = useState(false);
-  const [saveFlags, setSaveFlags] = useState([]);
-  // console.log(handleVisitedCountry);
 
-  // console.log(countryName.population);
   const HandleVisited = () => {
     setVisited(!visited);
 
     handleVisitedCountry(countryName);
   };
+
   return (
     <>
       <div className={`flex-two ${visited && "bg"}`}>
@@ -44,7 +46,7 @@ const Country = ({ countryName, handleVisitedCountry }) => {
           <button onClick={HandleVisited}>
             {visited ? "Visited" : "Not visited"}
           </button>
-          <button>
+          <button onClick={() => handleSaveFlagsItem(countryName)}>
             {/* {visited ? "Visited" : "Not visited"} */}
             Save flags
           </button>

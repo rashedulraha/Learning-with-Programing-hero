@@ -4,11 +4,16 @@ import "./countrise.css";
 
 const Countries = ({ countriesLoadData }) => {
   const [visitedCountries, setVisitCountries] = useState([]);
-  const handleVisitedCountry = (countryName) => {
-    console.log("update visited country clicked", countryName);
+  const [saveFlagsItem, setSaveFlagsItem] = useState([]);
 
+  const handleVisitedCountry = (countryName) => {
     const newVisitedCountry = [...visitedCountries, countryName];
     setVisitCountries(newVisitedCountry);
+  };
+
+  const handleSaveFlagsItem = (flags) => {
+    const newVisitedFlags = [...saveFlagsItem, flags];
+    setSaveFlagsItem(newVisitedFlags);
   };
   const countriesData = use(countriesLoadData);
   const countries = countriesData.countries;
@@ -47,6 +52,22 @@ const Countries = ({ countriesLoadData }) => {
           </div>
         </div>
       </div>
+      {/*  visited flags item add  and display */}
+
+      <div>
+        <h2> You visited country and flags : {saveFlagsItem.length}</h2>
+
+        <div className="item-flags-container">
+          {saveFlagsItem.map(
+            (singleFlags, index) => (
+              <img key={index} src={singleFlags.flags.flags.png}></img>
+            )
+
+            // <img src={singleFlags}></img>
+          )}
+        </div>
+      </div>
+
       <hr className="horizontalLine" />
 
       <div className="countries">
@@ -55,6 +76,7 @@ const Countries = ({ countriesLoadData }) => {
             key={country.cca3.cca3}
             countryName={country}
             handleVisitedCountry={handleVisitedCountry}
+            handleSaveFlagsItem={handleSaveFlagsItem}
           />
         ))}
       </div>

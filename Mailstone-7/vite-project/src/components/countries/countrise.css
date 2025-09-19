@@ -25,3 +25,14 @@
 .singleCountry {
   color: red;
 }
+
+.item-flags-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.item-flags-container img {
+  width: 120px;
+}
