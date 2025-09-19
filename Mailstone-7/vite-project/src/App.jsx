@@ -1,6 +1,8 @@
 import React, { Suspense } from "react";
 import Countries from "./components/countries/Countries";
 
+import "./App.css";
+
 // load api to promise
 
 const countriesLoadData = fetch(
@@ -9,7 +11,7 @@ const countriesLoadData = fetch(
 
 const App = () => {
   return (
-    <div>
+    <div className="container">
       <Suspense fallback={<p>Nadir vai loading...</p>}>
         <Countries countriesLoadData={countriesLoadData} />
       </Suspense>
