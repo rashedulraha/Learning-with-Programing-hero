@@ -1,9 +1,18 @@
-const Country = ({ countryName }) => {
-  // console.log(countryName.population);
+import { useState } from "react";
 
+const Country = ({ countryName, handleVisitedCountry }) => {
+  const [visited, setVisited] = useState(false);
+  // console.log(handleVisitedCountry);
+
+  // console.log(countryName.population);
+  const HandleVisited = () => {
+    setVisited(!visited);
+
+    handleVisitedCountry(countryName);
+  };
   return (
     <>
-      <div className="flex-two">
+      <div className={`flex-two ${visited && "bg"}`}>
         <div className="flex">
           <figure className="">
             <img
@@ -31,7 +40,9 @@ const Country = ({ countryName }) => {
           </div>
         </div>
         <div>
-          <button>Not visited</button>
+          <button onClick={HandleVisited}>
+            {visited ? "Visited" : "Not visited"}
+          </button>
         </div>
       </div>
     </>
