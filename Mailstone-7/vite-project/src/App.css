@@ -44,7 +44,7 @@ visited-content {
   color: white;
   border: 1px solid rebeccapurple;
   border-radius: 10px;
-  width: 100%;
+  width: 50%;
   transition: all 0.3s;
   background: blue;
 
@@ -52,6 +52,14 @@ visited-content {
     color: white;
     background: red;
   }
+}
+
+.style-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: row;
 }
 
 .main {

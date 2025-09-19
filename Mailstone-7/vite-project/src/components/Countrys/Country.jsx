@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const Country = ({ countryName, handleVisitedCountry }) => {
   const [visited, setVisited] = useState(false);
+  const [saveFlags, setSaveFlags] = useState([]);
   // console.log(handleVisitedCountry);
 
   // console.log(countryName.population);
@@ -39,9 +40,13 @@ const Country = ({ countryName, handleVisitedCountry }) => {
             <i class="fa-solid fa-arrow-right"></i>
           </div>
         </div>
-        <div>
+        <div className="style-btn">
           <button onClick={HandleVisited}>
             {visited ? "Visited" : "Not visited"}
+          </button>
+          <button>
+            {/* {visited ? "Visited" : "Not visited"} */}
+            Save flags
           </button>
         </div>
       </div>

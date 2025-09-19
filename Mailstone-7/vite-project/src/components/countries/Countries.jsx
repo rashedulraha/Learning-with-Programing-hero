@@ -20,8 +20,31 @@ const Countries = ({ countriesLoadData }) => {
           <h1>Country </h1>
           <p>From sources across the web</p>
         </div>
-        <div>
+        <div
+          style={{
+            border: "1px solid red",
+            marginTop: "20px",
+            padding: "10px",
+            borderRadius: "10px",
+          }}
+        >
           <p>You total visited country : {visitedCountries.length} </p>
+
+          <div
+            style={{
+              width: "100%",
+              height: "100px",
+              overflow: "hidden",
+              color: "green",
+              textTransform: "capitalize",
+            }}
+          >
+            <ol>
+              {visitedCountries.map((countries) => (
+                <li key={countries.name.common}>{countries.name.common}</li>
+              ))}
+            </ol>
+          </div>
         </div>
       </div>
       <hr className="horizontalLine" />
