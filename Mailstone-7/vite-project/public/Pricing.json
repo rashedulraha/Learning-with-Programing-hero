@@ -1,0 +1,142 @@
+[
+  {
+    "plan": "Basic",
+    "price": 9.99,
+    "billing": "per month",
+    "features": [
+      "1 User Account",
+      "10 GB Storage",
+      "Basic Support",
+      "1 Project",
+      "Limited API Access"
+    ],
+    "buttonLabel": "Get Started",
+    "isPopular": false
+  },
+  {
+    "plan": "Standard",
+    "price": 19.99,
+    "billing": "per month",
+    "features": [
+      "5 User Accounts",
+      "50 GB Storage",
+      "Priority Support",
+      "5 Projects",
+      "Standard API Access"
+    ],
+    "buttonLabel": "Choose Plan",
+    "isPopular": true
+  },
+  {
+    "plan": "Pro",
+    "price": 29.99,
+    "billing": "per month",
+    "features": [
+      "10 User Accounts",
+      "100 GB Storage",
+      "24/7 Support",
+      "10 Projects",
+      "Full API Access"
+    ],
+    "buttonLabel": "Select Pro",
+    "isPopular": false
+  },
+  {
+    "plan": "Starter",
+    "price": 0,
+    "billing": "free",
+    "features": [
+      "1 User Account",
+      "1 GB Storage",
+      "Community Support",
+      "1 Project",
+      "No API Access"
+    ],
+    "buttonLabel": "Try for Free",
+    "isPopular": false
+  },
+  {
+    "plan": "Business",
+    "price": 49.99,
+    "billing": "per month",
+    "features": [
+      "20 User Accounts",
+      "200 GB Storage",
+      "Dedicated Support",
+      "Unlimited Projects",
+      "Premium API Access"
+    ],
+    "buttonLabel": "Get Business",
+    "isPopular": false
+  },
+  {
+    "plan": "Enterprise",
+    "price": 99.99,
+    "billing": "per month",
+    "features": [
+      "Unlimited Users",
+      "500 GB Storage",
+      "Premium Support",
+      "Unlimited Projects",
+      "Custom API Solutions"
+    ],
+    "buttonLabel": "Contact Us",
+    "isPopular": false
+  },
+  {
+    "plan": "Freelancer",
+    "price": 14.99,
+    "billing": "per month",
+    "features": [
+      "1 User Account",
+      "25 GB Storage",
+      "Email Support",
+      "3 Projects",
+      "Basic API Access"
+    ],
+    "buttonLabel": "Start Now",
+    "isPopular": false
+  },
+  {
+    "plan": "Team",
+    "price": 39.99,
+    "billing": "per month",
+    "features": [
+      "15 User Accounts",
+      "150 GB Storage",
+      "Priority Support",
+      "8 Projects",
+      "Advanced API Access"
+    ],
+    "buttonLabel": "Choose Team",
+    "isPopular": false
+  },
+  {
+    "plan": "Growth",
+    "price": 24.99,
+    "billing": "per month",
+    "features": [
+      "8 User Accounts",
+      "75 GB Storage",
+      "24/7 Support",
+      "6 Projects",
+      "Standard API Access"
+    ],
+    "buttonLabel": "Select Growth",
+    "isPopular": false
+  },
+  {
+    "plan": "Ultimate",
+    "price": 79.99,
+    "billing": "per month",
+    "features": [
+      "50 User Accounts",
+      "300 GB Storage",
+      "Dedicated Support",
+      "Unlimited Projects",
+      "Premium API Access"
+    ],
+    "buttonLabel": "Get Ultimate",
+    "isPopular": false
+  }
+]
