@@ -2,6 +2,7 @@ import "./App.css";
 import ControlledField from "./component/controlledField/controlledField";
 import FormAction from "./component/fromAction/FormAction";
 import HookForm from "./component/hook/HookForm";
+import ProductManagement from "./component/ProductManegement/ProductManagement";
 import UnControlledField from "./component/unControlledField/UnControlledField";
 
 const App = () => {
@@ -13,7 +14,9 @@ const App = () => {
       {/* <FormAction /> */}
       {/* <ControlledField /> */}
       {/* <UnControlledField /> */}
-      <HookForm />
+      {/* <HookForm /> */}
+
+      <ProductManagement />
     </div>
   );
 };
