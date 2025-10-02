@@ -1,14 +1,20 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
+import { useLoaderData } from "react-router";
 import PostCard from "../Components/PostCard";
 
 const Home = () => {
-  const [plants, setPlants] = useState([]);
+  const { plants } = useLoaderData();
+  {
+    console.log(plants);
+  }
 
-  useEffect(() => {
-    fetch(`https://openapi.programming-hero.com/api/plants`)
-      .then((res) => res?.json())
-      .then((json) => setPlants(json.plants));
-  }, []);
+  // const [plants, setPlants] = useState([]);
+
+  // useEffect(() => {
+  //   fetch(`https://openapi.programming-hero.com/api/plants`)
+  //     .then((res) => res?.json())
+  //     .then((json) => setPlants(json.plants));
+  // }, []);
 
   return (
     <>

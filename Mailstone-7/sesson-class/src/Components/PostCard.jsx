@@ -14,7 +14,7 @@ const PostCard = ({ plant }) => {
           <p>{category}</p>
         </div>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Click me </button>
+          <button className="btn btn-primary">View details </button>
         </div>
       </div>
     </div>

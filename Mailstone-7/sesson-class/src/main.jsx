@@ -13,7 +13,11 @@ const router = createBrowserRouter([
     path: "/",
     Component: RootLayout,
     children: [
-      { index: true, element: <Home /> },
+      {
+        index: true,
+        loader: () => fetch(`https://openapi.programming-hero.com/api/plants`),
+        element: <Home />,
+      },
       { path: "/home", element: <Home /> },
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
