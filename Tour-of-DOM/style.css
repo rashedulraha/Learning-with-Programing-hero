@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --bg-color: #212121;
+  --header-text: #ffff;
+}
+body {
+  background-color: var(--bg-color);
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  border: 1px solid rebeccapurple;
+  padding: 20px;
+  border-radius: 10px;
+  max-height: 300px;
+  overflow: scroll;
+}
+
+.container h1 {
+  text-align: center;
+  text-transform: capitalize;
+  color: var(--header-text);
+
+  color: rgb(160, 96, 224);
+}
+h2 {
+  margin-bottom: 10px;
+  text-align: center;
+  color: rgb(144, 142, 142);
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.horizontalLIne {
+  color: rebeccapurple;
+}
+
+#actual-from {
+  margin-top: 20px;
+}
+.input-field {
+  width: 100%;
+  margin-right: 10px;
+}
+.input-and-btn {
+  display: flex;
+}
+
+input {
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  color: rebeccapurple;
+  background-color: rgb(226, 213, 238);
+}
+
+.btn {
+  cursor: pointer;
+  color: rebeccapurple;
+  transition: all 0.3s;
+  font-size: 18px;
+}
+
+.btn:hover {
+  color: white;
+  background-color: rebeccapurple;
+}
+
+/* actual-adding-content */
+
+#actual-adding-content {
+  margin-top: 10px;
+}
+
+.list-item {
+  color: rebeccapurple;
+  border: 1px solid green;
+  background-color: rgb(219, 236, 219);
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 4px;
+  font-size: 18px;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My awesome comment</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      section {
+        width: 50%;
+        margin: auto;
+      }
+
+      .comment {
+        border: 1px solid rebeccapurple;
+        background-color: rgb(222, 202, 240);
+        color: rebeccapurple;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: capitalize;
+        height: fit-content;
+      }
+
+      textarea {
+        width: 100%;
+        font-size: 18px;
+        color: rebeccapurple;
+        border: 1px solid rebeccapurple;
+        background-color: rgb(222, 202, 240);
+        padding: 5px 4px;
+        border-radius: 5px;
+        outline: none;
+        font-weight: 500;
+        margin: 20px auto;
+        resize: none;
+      }
+
+      button {
+        color: rebeccapurple;
+        background-color: rgb(222, 202, 240);
+        border: 1px solid rebeccapurple;
+        padding: 8px 15px;
+        font-size: 18px;
+        border-radius: 5px;
+
+        cursor: pointer;
+        text-transform: capitalize;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: white;
+          background-color: rebeccapurple;
+        }
+
+        &:focus {
+          color: green;
+          background-color: white;
+          border: 1px solid green;
+        }
+      }
+
+      .comment-header {
+        margin: 20px auto;
+        border: 1px solid rebeccapurple;
+        background-color: rgb(222, 202, 240);
+        color: rebeccapurple;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+
+      .dynamic-comment {
+        background-color: lightgreen;
+        color: green;
+        border: 1px solid green;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 20px;
+        text-align: center;
+        text-transform: capitalize;
+      }
+
+      .comment-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin: 20px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1 class="comment-header">
+        My awesome comment . write what is your mind
+      </h1>
+      <!--  main section -->
+      <h3 class="dynamic-comment">all comment hear</h3>
+      <div class="comment-section">
+        <p class="comment">
+          Lorem ipsum dolor sit amtum distinctio non nulla, quae totam id
+          laborum iste et qui, provident, quos ipsam tenetur! Impedit!
+        </p>
+        <p class="comment">
+          tatum distinctio non nulla, quae totam id laborum iste et qui,
+          provident, quos ipsam tenetur! Impedit!
+        </p>
+      </div>
+      <hr />
+
+      <div>
+        <form action="">
+          <textarea name="text" rows="3" id="comment-input"></textarea><br />
+          <button id="submit">submit</button>
+        </form>
+      </div>
+    </section>
+    <!-- script -->
+    <script src="comment.js"></script>
+  </body>
+</html>
