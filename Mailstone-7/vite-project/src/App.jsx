@@ -1,9 +1,7 @@
 import "./App.css";
-import ControlledField from "./component/controlledField/controlledField";
-import FormAction from "./component/fromAction/FormAction";
-import HookForm from "./component/hook/HookForm";
-import ProductManagement from "./component/ProductManegement/ProductManagement";
-import UnControlledField from "./component/unControlledField/UnControlledField";
+
+ProductManegement/ProductManagement";
+
 
 const App = () => {
   return (
