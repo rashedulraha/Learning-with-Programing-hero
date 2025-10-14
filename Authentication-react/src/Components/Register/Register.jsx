@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "../Container";
 import { Link } from "react-router";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../FireBaseAuthentication/Firebase.init";
+import { AuthContext } from "../../Contexts/AuthContext/AuthContext";
 
 const Register = () => {
+  const authInfo = useContext(AuthContext);
+  console.log(authInfo);
+
   const handleRegister = (event) => {
     event.preventDefault();
     // const name = event.target.name.value;
