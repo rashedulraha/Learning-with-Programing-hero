@@ -5,15 +5,32 @@ import Container from "../Container";
 import { AuthContext } from "../../Contexts/AuthContext/AuthContext";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
-  console.log(user);
+  const { user, signOutUser } = useContext(AuthContext);
+
+  const handleSignOut = () => {
+    signOutUser()
+      .then(() => {
+        console.log("sign out successfully");
+      })
+      .catch((error) => {
+        console.log("Error Happen : ", error);
+      });
+  };
 
   const navLink = (
     <>
       <div className="flex flex-col md:flex-row  items-center space-x-5 font-semibold text-lg text-zinc-700">
         <NavLink to={"/"}>Home</NavLink>
         <NavLink to={"register"}>Register</NavLink>
-        <NavLink to={"login"}>Login</NavLink>
+        <NavLink to={"login"}>LogIn</NavLink>
+        <NavLink to={"/dashboard"}>Dashboard</NavLink>
+
+        {user && (
+          <>
+            <NavLink to={"/order"}>Order</NavLink>
+            <NavLink to={"/profile"}>profile</NavLink>
+          </>
+        )}
       </div>
     </>
   );
@@ -58,9 +75,13 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
               {user ? (
-                <a className="btn">SingOut</a>
+                <a onClick={handleSignOut} className="btn">
+                  SingOut
+                </a>
               ) : (
-                <Link className="btn">Signin</Link>
+                <Link to={"/login"} className="btn">
+                  Sign In
+                </Link>
               )}
             </div>
           </div>
