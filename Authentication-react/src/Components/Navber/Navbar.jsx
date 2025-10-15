@@ -1,9 +1,13 @@
-import React from "react";
-import { NavLink } from "react-router";
+import React, { useContext } from "react";
+import "../../index.css";
+import { Link, NavLink } from "react-router";
 import Container from "../Container";
-import "./Navbar.css";
+import { AuthContext } from "../../Contexts/AuthContext/AuthContext";
 
 const Navbar = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
+
   const navLink = (
     <>
       <div className="flex flex-col md:flex-row  items-center space-x-5 font-semibold text-lg text-zinc-700">
@@ -53,7 +57,11 @@ const Navbar = () => {
               <ul className="menu menu-horizontal px-1">{navLink}</ul>
             </div>
             <div className="navbar-end">
-              <a className="btn">Button</a>
+              {user ? (
+                <a className="btn">SingOut</a>
+              ) : (
+                <Link className="btn">Signin</Link>
+              )}
             </div>
           </div>
         </Container>

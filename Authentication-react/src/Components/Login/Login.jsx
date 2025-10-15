@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "../Container";
 import { Link } from "react-router";
+import { AuthContext } from "../../Contexts/AuthContext/AuthContext";
 
 const Login = () => {
+  const { signInUser } = useContext(AuthContext);
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+
+    const email = event.target.email.value;
+    const password = event.target.email.value;
+
+    signInUser(email, password)
+      .then((result) => console.log(result))
+      .catch((error) => console.log(error));
+  };
   return (
     <>
       <Container>
@@ -13,7 +26,7 @@ const Login = () => {
             </div>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
               <div className="card-body">
-                <form>
+                <form onSubmit={handleLogin}>
                   <fieldset className="fieldset">
                     {/* email */}
                     <label className="label">Email</label>
