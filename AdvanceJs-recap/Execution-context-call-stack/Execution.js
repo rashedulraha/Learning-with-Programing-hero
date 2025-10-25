@@ -9,40 +9,41 @@
 // console.log(age); // ReferenceError: Cannot access 'age' before initialization
 // let age = 45;
 
-//  closure  function
-// function outer() {
-//   let name = "Rashedul islam";
-
-//   function inner() {
-//     console.log("Hello " + name);
-//   }
-//   return inner;
-// }
-
-// const result = outer();
-
-// result();
-
-// practice project with closure
-
-// Counter App (with Closure)
-
-// function createCounter() {
-//   let count = 0;
-
-//   return function () {
-//     count++;
-//     return count;
-//   };
-// }
-
-// createCounter()
-// const counter = createCounter();
-
 // const display = document.getElementById("display");
-// const button = document.getElementById("btn");
+// const btn = document.getElementById("btn");
 
-// button.addEventListener("click", () => {
-//   const newCount = counter(); // inner function count
-//   display.textContent = newCount;
+// const counter = () => {
+//   let countValue = 0;
+
+//   return function count() {
+//     return countValue++;
+//   };
+// };
+
+// const functionCounter = counter();
+
+// btn.addEventListener("click", () => {
+//   const countValue = functionCounter();
+//   display.innerText = countValue;
 // });
+
+// async function greet() {
+//   return "Hello async";
+// }
+
+// const result = greet();
+// const promise = result.then((res) => {
+//   console.log(res);
+// });
+
+function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function asyncDemo() {
+  console.log("Start");
+  // await wait(2000); // 2 seconds pause
+  console.log("End after 2 seconds");
+}
+
+asyncDemo();
