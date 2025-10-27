@@ -1,47 +1,15 @@
-const fs = require("fs");
+const express = require("express");
 
-// fs.writeFile("hey.txt", " can i help you", function (error) {
-//   if (error) {
-//     console.log(error);
-//   } else {
-//     console.log("all about done");
-//   }
-// });
+const app = express();
 
-// fs.appendFile("hey.txt", " can i help you", function (error) {
-//   if (error) {
-//     console.log(error);
-//   } else {
-//     console.log("all about done");
-//   }
-// });
+// create a routes
 
-// fs.rename("hey.txt", "Hello.txt", function (error) {
-//   if (error) {
-//     console.log(error);
-//   } else {
-//     console.log("all about done");
-//   }
-// });
-// fs.copyFile("Hello.txt", "./Copy/Copy.txt", function (error) {
-//   if (error) {
-//     console.log(error);
-//   } else {
-//     console.log("all about done");
-//   }
-// });
-// fs.unlink("Hello.txt", function (error) {
-//   if (error) {
-//     console.log(error);
-//   } else {
-//     console.log("all about done");
-//   }
-// });
+app.get("/", function (req, res) {
+  res.send("champion mera anuj");
+});
 
-// fs.unlink("Hello.txt", function (error) {
-//   if (error) {
-//     console.log(error);
-//   } else {
-//     console.log("all about done");
-//   }
-// });
+app.get("/profile", function (req, res) {
+  res.send("champion uska coach");
+});
+
+app.listen(5000);
