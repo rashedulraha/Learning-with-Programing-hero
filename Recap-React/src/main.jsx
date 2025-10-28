@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import Home from "./Page/Home";
 import HooksForm from "./Components/HooksForm/HooksForm";
 import TitleUpdater from "./Components/TitleUpdater/TitleUpdater";
+import UseReducer from "./Hooks/UseReducre/UseReducer";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "document",
     Component: TitleUpdater,
+  },
+  {
+    path: "reducer",
+    Component: UseReducer,
   },
 ]);
 
