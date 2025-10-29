@@ -9,8 +9,10 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+// const uri =
+//   "mongodb+srv://simpleDevUser:CWA2aQZp31vTJkLK@simpleproject.deo4wzy.mongodb.net/?appName=SimpleProject";
 const uri =
-  "mongodb+srv://simpleDevUser:CWA2aQZp31vTJkLK@simpleproject.deo4wzy.mongodb.net/?appName=SimpleProject";
+  "mongodb+srv://simpleDevUser:CWA2aQZp31vTJkLK@simpleproject.deo4wzy.mongodb.net/simpleProjectDB?retryWrites=true&w=majority&appName=SimpleProject";
 
 //! Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -28,6 +30,17 @@ app.get("/", (req, res) => {
 async function run() {
   try {
     await client.connect();
+    const userDb = client.db("userDb");
+    const userCollection = userDb.collection("users");
+
+    //!  add data base related api
+    app.post("/user", async (req, res) => {
+      const newUser = req.body;
+      console.log("user information", newUser);
+
+      const result = await userCollection.insertOne();
+      res.send(result);
+    });
     await client.db("admin").command({ ping: 1 });
     console.log(
       "Pinged your deployment. You successfully connected to MongoDB!"
@@ -38,9 +51,9 @@ async function run() {
 }
 run().catch(console.dir);
 
-app.get("/user", (req, res) => {
-  res.send("Hello user");
-});
+// app.get("/user", (req, res) => {
+//   res.send("Hello user");
+// });
 app.get("/profile", (req, res) => {
   res.send("Hello profile");
 });
