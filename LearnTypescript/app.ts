@@ -27,3 +27,45 @@
 // number = 23;
 // number = "nothing";
 // number = true;
+
+// ! interface
+
+// interface UserInformation {
+//   name: string;
+//   email: string;
+//   password: string;
+// }
+
+// interface Admin extends UserInformation {
+//   admin: boolean;
+// }
+// function getDataOfUser(obj: Admin) {}
+
+//
+
+// interface abcd {
+//   name: string;
+// }
+// interface abcd {
+//   email: string;
+// }
+
+// function nothing(obj: abcd) {}
+
+// type Nothing = number;
+// let a: Nothing;
+
+// type value = number | boolean | string;
+
+// let result: value;
+
+// console.log(result);
+// let a = 34;
+// let b = 45;
+// console.log(a + b);
+
+// type result = number | string | boolean;
+
+// function named(object: result) {
+//   object.
+// }
