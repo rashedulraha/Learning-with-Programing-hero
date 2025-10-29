@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import User from "../Components/User";
 
 const Home = () => {
   // ! data load t backend
@@ -11,13 +10,7 @@ const Home = () => {
       console.log(error.message);
     });
 
-  return (
-    <div>
-      <Suspense fallback={"data loading"}>
-        <User dataLoad={dataLoad} />
-      </Suspense>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Home;
