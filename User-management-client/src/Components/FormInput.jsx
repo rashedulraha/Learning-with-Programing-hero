@@ -2,6 +2,30 @@ import React from "react";
 import Container from "./Container";
 
 const FormInput = () => {
+  const handleAddUser = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    // console.log(name, email);
+
+    const newUser = { name, email };
+
+    // ! send data to the server
+
+    fetch("http://localhost:3000/user", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newUser),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log("After post", data);
+      });
+  };
   return (
     <>
       <Container>
@@ -9,15 +33,21 @@ const FormInput = () => {
           <h1>Add user </h1>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mt-5">
             <div className="card-body">
-              <form>
+              <form onSubmit={handleAddUser}>
                 <fieldset className="fieldset">
-                  <label className="label">Email</label>
-                  <input type="email" className="input" placeholder="Email" />
-                  <label className="label">Password</label>
+                  <label className="label">Name</label>
                   <input
-                    type="password"
+                    type="text"
+                    name="name"
                     className="input"
-                    placeholder="Password"
+                    placeholder="Enter  your email"
+                  />
+                  <label className="label">Email</label>
+                  <input
+                    type="email"
+                    className="input"
+                    name="email"
+                    placeholder="Enter your email"
                   />
                   <div>
                     <a className="link link-hover">Forgot password?</a>
