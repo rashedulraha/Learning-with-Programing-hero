@@ -7,6 +7,7 @@ import App from "./App";
 
 import FormInput from "./Components/FormInput";
 import Home from "./Page/Home";
+import { ToastContainer } from "react-toastify";
 
 const router = createBrowserRouter([
   {
@@ -27,5 +28,6 @@ const root = document.getElementById("root");
 ReactDOM.createRoot(root).render(
   <StrictMode>
     <RouterProvider router={router} />
+    <ToastContainer />
   </StrictMode>
 );

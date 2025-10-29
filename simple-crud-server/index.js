@@ -31,14 +31,14 @@ async function run() {
   try {
     await client.connect();
     const userDb = client.db("userDb");
-    const userCollection = userDb.collection("users");
+    const userCollection = userDb.collection("user");
 
     //!  add data base related api
     app.post("/user", async (req, res) => {
       const newUser = req.body;
       console.log("user information", newUser);
 
-      const result = await userCollection.insertOne();
+      const result = await userCollection.insertOne(newUser);
       res.send(result);
     });
     await client.db("admin").command({ ping: 1 });
