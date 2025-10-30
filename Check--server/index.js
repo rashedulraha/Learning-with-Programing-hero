@@ -7,6 +7,10 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Hello Anything ");
+});
+
 const uri =
   "mongodb+srv://Check-server:wIGHJBYA7ugqA2Gq@simpleproject.deo4wzy.mongodb.net/?appName=SimpleProject";
 
@@ -23,6 +27,19 @@ const client = new MongoClient(uri, {
 const run = async () => {
   try {
     await client.connect();
+
+    const usersInformationDB = client.db("usersInformationDB");
+    const usersCollection = usersInformationDB.collection("users");
+
+    //! data base related work
+
+    app.post("/users", async (req, res) => {
+      const newUser = req.body;
+      console.log("hitting the post api ", newUser);
+      const result = await usersCollection.insertOne(newUser);
+      res.send(result);
+    });
+
     await client.db("admin").command({ ping: 1 });
     console.log(
       "Pinged your deployment. You successfully connected to MongoDB!"
@@ -33,10 +50,6 @@ const run = async () => {
 };
 
 run().catch(console.dir);
-
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
