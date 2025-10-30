@@ -33,10 +33,15 @@ const run = async () => {
 
     //! data base related work
 
+    app.get("/users", async (req, res) => {
+      const findUsersData = usersCollection.find();
+      const result = await findUsersData.toArray();
+      res.send(result);
+    });
+
     app.post("/users", async (req, res) => {
       const newUser = req.body;
-      console.log("hitting the post api ", newUser);
-      const result = await usersCollection.insertOne(newUser);
+      const result = usersCollection.insertOne(newUser);
       res.send(result);
     });
 

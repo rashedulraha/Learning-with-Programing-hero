@@ -54,6 +54,34 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.customStyle {
+  border: 2px solid red;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 3px;
+}
+
+.map-style {
+  display: flex;
+  gap: 10px;
+  justify-content: start;
+}
+
+.first {
+  flex: 1;
+  background-color: white;
+  color: rebeccapurple;
+  text-align: start;
+  padding: 0 5px 0 5px;
+}
+
+.second {
+  flex: 2;
+  background-color: white;
+  color: rebeccapurple;
+  text-align: start;
+  padding: 0 5px 0 5px;
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
