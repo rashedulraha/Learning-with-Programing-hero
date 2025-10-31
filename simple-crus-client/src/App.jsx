@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <h1>Simple crud</h1>
-      <Users userPromise={userPromise} />
+      <Users />
     </>
   );
 }
