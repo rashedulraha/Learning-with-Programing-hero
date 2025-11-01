@@ -1,5 +1,5 @@
 const express = require("express");
-const { MongoClient, ServerApiVersion } = require("mongodb");
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const cors = require("cors");
 
 const app = express();
@@ -37,6 +37,12 @@ const run = async () => {
       const result = await userInfo.toArray();
       res.send(result);
     });
+    app.get("/users/:id", async (req, res) => {
+      const params = req.params.id;
+      const query = { _id: new ObjectId(params) };
+      const result = await userCollection.findOne(query);
+      res.send(result);
+    });
 
     app.post("/users", async (req, res) => {
       const newUser = req.body;
@@ -45,11 +51,11 @@ const run = async () => {
       // console.log("hitting the apis ", newUser);
     });
 
-    app.delete("/users/:id", (req, res) => {
-      const params = req.params;
-      console.log(params);
-
-      console.log("delete user from data base");
+    app.delete("/users/:id", async (req, res) => {
+      const params = req.params.id;
+      const query = { _id: new ObjectId(params) };
+      const result = await userCollection.deleteOne(query);
+      res.send(result);
     });
 
     await client.db("admin").command({ ping: 1 });
