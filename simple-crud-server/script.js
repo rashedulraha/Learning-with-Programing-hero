@@ -51,6 +51,23 @@ const run = async () => {
       // console.log("hitting the apis ", newUser);
     });
 
+    app.patch("/users/:id", async (req, res) => {
+      const updateUser = req.body;
+      const params = req.params.id;
+      console.log("to update user".id, updateUser);
+
+      const query = { _id: new ObjectId(params) };
+      const update = {
+        $set: {
+          name: updateUser.name,
+          email: updateUser.email,
+        },
+      };
+      const option = {};
+      const result = await userCollection.updateOne(query, update, option);
+      res.send(result);
+    });
+
     app.delete("/users/:id", async (req, res) => {
       const params = req.params.id;
       const query = { _id: new ObjectId(params) };
