@@ -1,16 +1,16 @@
-import "./App.css";
+import Container from "./Components/Container";
 import Users from "./Components/Users";
-
-const userPromise = fetch("http://localhost:3000/users").then((result) => {
-  return result.json();
-});
-console.log(userPromise);
+const userDataPromise = fetch("http://localhost:3000/users").then((res) =>
+  res.json()
+);
 
 function App() {
   return (
     <>
-      <h1>Simple crud</h1>
-      <Users />
+      <Container>
+        <h1>Simple crud</h1>
+        <Users userDataPromise={userDataPromise} />
+      </Container>
     </>
   );
 }
