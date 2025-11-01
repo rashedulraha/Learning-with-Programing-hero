@@ -26,6 +26,32 @@ const client = new MongoClient(uri, {
 const run = async () => {
   try {
     await client.connect();
+
+    const simpleUserDB = client.db("simpleUserDB");
+    const userCollection = simpleUserDB.collection("users");
+
+    //! add data base related apis here
+
+    app.get("/users", async (req, res) => {
+      const userInfo = userCollection.find();
+      const result = await userInfo.toArray();
+      res.send(result);
+    });
+
+    app.post("/users", async (req, res) => {
+      const newUser = req.body;
+      const result = await userCollection.insertOne(newUser);
+      res.send(result);
+      // console.log("hitting the apis ", newUser);
+    });
+
+    app.delete("/users/:id", (req, res) => {
+      const params = req.params;
+      console.log(params);
+
+      console.log("delete user from data base");
+    });
+
     await client.db("admin").command({ ping: 1 });
     console.log(
       "Pinged your deployment. You successfully connected to MongoDB!"
