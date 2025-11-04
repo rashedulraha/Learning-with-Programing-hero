@@ -1,4 +1,5 @@
 import React, { use, useState } from "react";
+import { Link } from "react-router";
 import { toast } from "react-toastify";
 
 const Users = ({ userDataPromise }) => {
@@ -42,14 +43,22 @@ const Users = ({ userDataPromise }) => {
   };
 
   const handleDeleteUser = (userId) => {
-    console.log("user delete", userId);
-
     fetch(`http://localhost:3000/users/${userId}`, {
       method: "delete",
     })
       .then((res) => res.json())
-      .then((data) => console.log("After delete from data base", data));
+      .then((data) => {
+        console.log("After delete from data base", data);
+        if (data.deletedCount) {
+          toast.success("delete successfully");
+
+          const remainingUser = usersInfo.filter((user) => user._id !== userId);
+
+          setUsersInfo(remainingUser);
+        }
+      });
   };
+
   return (
     <div>
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -82,6 +91,12 @@ const Users = ({ userDataPromise }) => {
         {usersInfo?.map((user) => (
           <p key={user.id}>
             {user.name}
+            <Link className="text-info" to={`/details/${user._id}`}>
+              Details{" "}
+            </Link>
+            <Link className="text-primary" to={`/update-user/${user._id}`}>
+              Edit
+            </Link>
             <button onClick={() => handleDeleteUser(user._id)} className="btn">
               x
             </button>
