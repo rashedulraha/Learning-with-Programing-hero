@@ -8,13 +8,13 @@
   <!--! Link tailwind css -->
    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="flex flex-col h-screen">
   <!-- header section -->
-<header>
+<header class="sticky top-0">
   <div class="container mx-auto px-4 flex items-center justify-between py-3">
     <!-- logo container -->
     <div><h3 class="text-xl md:text-2xl lg:text-3xl font-bold">Tech <span class="bg-linear-to-tr from-[#F7E93F] via-[#FB09B4] to-[#9100F8] bg-clip-text text-transparent">Wave</span></h3></div>
-    <!-- nav container -->
+    <!-- nav container --> 
     <nav class="hidden md:flex">
       <ul class="flex items-center gap-5"> 
         <li><a href="about">About</a></li>
@@ -27,15 +27,49 @@
       <button class="py-2 px-4 rounded-full bg-linear-to-tr from-[#F7E93F] via-[#FB09B4] to-[#9100F8] text-white">
         Subscribe
       </button>
-    </div>
+    </div>  
       <!-- menu handle bare  -->
    <div class="md:hidden"><img src="./assets/hamburger-menu.png" alt="hamburger"></div>
   </div>
-
 </header>
 <!-- main section -->
-<main></main>
+<main class="flex-1">
+  <!-- first section  -->
+   <section>
+   </section>
+
+   <!-- last section -->
+    <div class="space-y-5 container mx-auto px-4 my-5 md:my-10">
+      <h3 class="capitalize text-white font-semibold text-3xl md:text-4xl lg:text-5xl text-center ">meet the host</h3>
+      <div class="bg-[#250e44] rounded-lg p-5 md:p-8 gap-6 flex">
+        <div><img src="./assets/host.png" alt=""></div>
+        <div class="flex-1 space-y-4">
+        <h2 class="capitalize text-white font-semibold text-2xl md:text-3xl lg:text-4xl ">Alex Kumar<h2>
+        <p class="text-sm md:text-lg text-gray-400">Tech entrepreneur, productivity expert, and lifelong learner. Alex has been in the tech industry for over 10 years, working with startups and Fortune 500 companies. Through TechWave, Alex shares insights from industry leaders and practical advice for anyone looking to grow in tech.</p>
+        
+        <div class="flex items-center gap-5 mt-4">
+          <div class="border rounded-full w-10 h-10 flex items-center justify-center">
+            <img src="./assets/linkedin.png" alt="">
+          </div>
+          <div class="border rounded-full w-10 h-10 flex items-center justify-center">
+            <img src="./assets/x.png" alt="">
+          </div>
+          <div class="border rounded-full w-10 h-10 flex items-center justify-center">
+            <img src="./assets/instagram.png" alt="">
+          </div>
+          <div class="border rounded-full w-10 h-10 flex items-center justify-center">
+            <img src="./assets/youtube.png" alt="">
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div> 
+</main>
 <!-- footer section -->
-<footer></footer>
+<footer class="relative">
+  <div ><img src="./assets/footer-bg.png" alt=""></div>
+  <div class="absolute "><h3 class="text-xl md:text-2xl lg:text-3xl font-bold">Tech <span class="bg-linear-to-tr from-[#F7E93F] via-[#FB09B4] to-[#9100F8] bg-clip-text text-transparent">Wave</span></h3></div>
+</footer>
 </body>
 </html>
