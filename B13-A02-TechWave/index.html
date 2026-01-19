@@ -8,9 +8,9 @@
   <!--! Link tailwind css -->
    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="flex flex-col h-screen">
+<body class="flex flex-col min-h-screen">
   <!-- header section -->
-<header class="sticky top-0">
+<header class="sticky top-0 backdrop-blur-3xl border-b border-gray-500">
   <div class="container mx-auto px-4 flex items-center justify-between py-3">
     <!-- logo container -->
     <div><h3 class="text-xl md:text-2xl lg:text-3xl font-bold">Tech <span class="bg-linear-to-tr from-[#F7E93F] via-[#FB09B4] to-[#9100F8] bg-clip-text text-transparent">Wave</span></h3></div>
@@ -38,10 +38,65 @@
    <section>
    </section>
 
-   <!-- last section -->
-    <div class="space-y-5 container mx-auto px-4 my-5 md:my-10">
+   <!--! Featured Episodes Section -->
+   <div class="container mx-auto px-4">
+    <h2 class="capitalize text-white font-semibold text-3xl md:text-4xl lg:text-5xl text-center mb-5 md:mb-8 ">Featured Episodes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 ">
+      <div class="w-full rounded-2xl shadow-2xs overflow-hidden bg-[#250e44] space-y-5">
+        <div class="h-48 bg-white"></div>
+        <div class="px-4 py-4 space-y-3">
+          <h3 class="capitalize text-white font-semibold  md:text-xl lg:text-2xl ">The Future of AI in Everyday Life
+          </h3>
+          <p class="text-sm md:text-base text-gray-400 ">
+            Exploring how artificial intelligence is transforming our daily routines and what to expect in the next decade.
+          </p>
+          <div class="flex items-center gap-2">
+            <img src="./assets/clock.png" alt="">
+            <span class="text-green-500">42 min</span>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="w-full rounded-2xl shadow-2xs overflow-hidden bg-[#250e44] space-y-5">
+        <div class="h-48 bg-white"></div>
+        <div class="px-4 py-4 space-y-3">
+          <h3 class="capitalize text-white font-semibold  md:text-xl lg:text-2xl ">The Future of AI in Everyday Life
+          </h3>
+          <p class="text-sm md:text-base text-gray-400 ">
+            Exploring how artificial intelligence is transforming our daily routines and what to expect in the next decade.
+          </p>
+          <div class="flex items-center gap-2">
+            <img src="./assets/clock.png" alt="">
+            <span class="text-green-500">42 min</span>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="w-full rounded-2xl shadow-2xs overflow-hidden bg-[#250e44] space-y-5">
+        <div class="h-48 bg-white"></div>
+        <div class="px-4 py-4 space-y-3">
+          <h3 class="capitalize text-white font-semibold  md:text-xl lg:text-2xl ">The Future of AI in Everyday Life
+          </h3>
+          <p class="text-sm md:text-base text-gray-400 ">
+            Exploring how artificial intelligence is transforming our daily routines and what to expect in the next decade.
+          </p>
+          <div class="flex items-center gap-2">
+            <img src="./assets/clock.png" alt="">
+            <span class="text-green-500">42 min</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+   </div>
+
+   <!--! last section -->
+  <div class="space-y-8 container mx-auto px-4 my-5 md:my-10">
       <h3 class="capitalize text-white font-semibold text-3xl md:text-4xl lg:text-5xl text-center ">meet the host</h3>
-      <div class="bg-[#250e44] rounded-lg p-5 md:p-8 gap-6 flex">
+      <div class="bg-[#250e44] rounded-lg p-5 md:p-8 gap-6 flex flex-col items-center md:flex-row">
         <div><img src="./assets/host.png" alt=""></div>
         <div class="flex-1 space-y-4">
         <h2 class="capitalize text-white font-semibold text-2xl md:text-3xl lg:text-4xl ">Alex Kumar<h2>
@@ -64,7 +119,7 @@
 
         </div>
       </div>
-    </div> 
+  </div> 
 </main>
 <!-- footer section -->
 <footer class="relative">
