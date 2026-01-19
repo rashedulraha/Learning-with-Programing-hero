@@ -34,8 +34,101 @@
 </header>
 <!-- main section -->
 <main class="flex-1">
-  <!-- first section  -->
-   <section>
+  <!--! first hero section section  -->
+   <!-- <section>
+    <div class="bg-[url(/assets/hero-bg.png)] h-screen flex items-center justify-center bg-no-repeat w-full bg-center bg-cover ">
+      <div>
+        <img class="w-[350px] h-[350px]" src="./assets/hero-circle.png" alt="">
+      </div>
+    </div>
+    
+   </section> -->
+   <section class="w-full h-screen">
+  <div class="relative w-full h-full 
+              bg-[url('./assets/hero-bg.png')] 
+              bg-cover bg-center bg-no-repeat 
+              flex items-center justify-center">
+
+  
+    <!-- Center Content -->
+    <div class="flex flex-col items-center text-center z-10">
+
+      <!-- Circle -->
+      <div class="relative w-48 h-48 md:w-56 md:h-56 rounded-full 
+                  flex items-center justify-center
+                  bg-[url('./assets/hero-circle.png')] 
+                  bg-cover bg-center">
+
+        <!-- Microphone -->
+        <img src="./assets/microphone.png" 
+             class="w-16 md:w-20"
+             alt="microphone">
+
+        <!-- NEW Badge -->
+        <span class="absolute top-2 right-2 
+                     bg-green-400 text-black text-xs 
+                     px-2 py-1 rounded-full font-semibold">
+          NEW
+        </span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="text-white text-3xl md:text-4xl font-bold mt-6">
+        TechWave
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-gray-300 text-sm md:text-base mt-2 max-w-md">
+        Your daily dose of tech insights, productivity hacks, and personal growth
+      </p>
+
+      <!-- Buttons -->
+      <div class="flex gap-4 mt-6">
+        <button class="px-5 py-2 rounded-full 
+                       bg-linear-to-tr from-pink-500 to-yellow-400 
+                       text-black font-semibold text-sm flex items-center gap-2">
+          <img class="w-5 h-5" src="./assets/headphone.png" alt=""> Listen on Spotify
+        </button>
+
+        <button class="px-5 py-2 rounded-full 
+                       border border-green-400 
+                       text-green-400 font-semibold text-sm flex items-center gap-2">
+          <img src="./assets/message.png" alt=""> Subscribe
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+   <!--! About the Podcast Section -->
+   <section class="max-w-10/12 mx-auto px-4">
+    <div class="space-y-4 my-5 md:my-10">
+      <h2 class="capitalize text-white font-semibold text-3xl md:text-4xl lg:text-5xl text-center">About the Podcast</h2>
+      <p class="font-normal text-sm md:text-base text-gray-400 max-w-3xl mx-auto text-center" >TechWave is your go-to podcast for staying ahead in the fast-paced world of technology.
+          We break down complex topics into digestible insights, explore productivity strategies that actually work,and share stories of personal growth from industry leaders.
+      </p>
+      <p class="font-normal text-sm md:text-base text-gray-400 max-w-3xl mx-auto text-center mt-5 md:mt-8">Join thousands of young professionals and tech enthusiasts who start their day with TechWave.</p>
+    </div>
+    <div class="space-y-4 my-5 md:my-10 grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-20">
+     <div class="flex flex-col items-center">
+      <h2 class="text-2xl md:text-3xl capitalize font-bold text-green-500"> 150K+</h2>
+      <p class="text-sm md:text-base text-gray-400">Monthly Listeners</p>
+     </div>
+     <div class="flex flex-col items-center">
+      <h2 class="text-2xl md:text-3xl capitalize font-bold text-green-500"> 200+</h2>
+      <p class="text-sm md:text-base text-gray-400">Episodes Published</p>
+     </div>
+     <div class="flex flex-col items-center">
+      <h2 class="text-2xl md:text-3xl capitalize font-bold text-green-500"> 4.9</h2>
+      <p class="text-sm md:text-base text-gray-400">Average Rating</p>
+     </div>
+     <div class="flex flex-col items-center">
+      <h2 class="text-2xl md:text-3xl capitalize font-bold text-green-500"> 50K+</h2>
+      <p class="text-sm md:text-base text-gray-400">Industry Experts</p>
+     </div>
+    </div>
    </section>
 
    <!--! Featured Episodes Section -->
@@ -94,7 +187,7 @@
    </div>
 
    <!--! last section -->
-  <div class="space-y-8 container mx-auto px-4 my-5 md:my-10">
+  <div class="space-y-8 max-w-10/12 mx-auto px-4 my-5 md:my-10">
       <h3 class="capitalize text-white font-semibold text-3xl md:text-4xl lg:text-5xl text-center ">meet the host</h3>
       <div class="bg-[#250e44] rounded-lg p-5 md:p-8 gap-6 flex flex-col items-center md:flex-row">
         <div><img src="./assets/host.png" alt=""></div>
@@ -123,8 +216,19 @@
 </main>
 <!-- footer section -->
 <footer class="relative">
-  <div ><img src="./assets/footer-bg.png" alt=""></div>
-  <div class="absolute "><h3 class="text-xl md:text-2xl lg:text-3xl font-bold">Tech <span class="bg-linear-to-tr from-[#F7E93F] via-[#FB09B4] to-[#9100F8] bg-clip-text text-transparent">Wave</span></h3></div>
+  <div>
+    <img src="./assets/footer-bg.png" alt="">
+  </div>
+
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <h3 class="text-xl md:text-2xl lg:text-3xl font-bold">
+      Tech 
+      <span class="bg-linear-to-tr from-[#F7E93F] via-[#FB09B4] to-[#9100F8] bg-clip-text text-transparent">
+        Wave
+      </span>
+    </h3>
+  </div>
 </footer>
+
 </body>
 </html>
