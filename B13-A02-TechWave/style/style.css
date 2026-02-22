@@ -10,3 +10,8 @@ body {
    background: #1A0B2E;
    color: white;
 }
+
+
+.p {
+  @apply text-sm md:text-base text-gray-400;
+}
